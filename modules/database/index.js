@@ -59,7 +59,7 @@ const addUser = async (name, password, type) => {
           type,
           token: '',
         });
-      
+
         user.save().catch((error) => { throw new Error(error); });
         return {
           success: true,
@@ -150,6 +150,44 @@ const addPost = async (post) => {
   }
 };
 
+const editPost = async (title, newPost) => {
+  try {
+    const post = await Post.findOne({ title });
+    if (post) {
+      const result = await Post.updateOne({ title }, newPost);
+      return {
+        success: result.nModified === 1,
+      };
+    }
+    else {
+      throw new Error('no such post');
+    }
+  }
+  catch (error) {
+    log.error(`[database]: edit post error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
+
+const removePost = async (title) => {
+  try {
+    const result = await Post.deleteOne({ title });
+    return {
+      success: result && true,
+    }
+  }
+  catch (error) {
+    log.error(`[database]: remove post error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
+
 //#endregion
 
 module.exports = {
@@ -157,4 +195,6 @@ module.exports = {
   addUser,
   authUser,
   addPost,
+  editPost,
+  removePost,
 };
