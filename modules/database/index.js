@@ -114,6 +114,44 @@ const authUser = async (name, password) => {
   }
 };
 
+const editUser = async (name, newUserData) => {
+  try {
+    const user = await User.findOne({ name });
+    if (user) {
+      const result = await User.updateOne({ name }, newUserData);
+      return {
+        success: result.nModified === 1,
+      };
+    }
+    else {
+      throw new Error('no such user');
+    }
+  }
+  catch (error) {
+    log.error(`[database]: edit user error ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
+
+const removeUser = async (name) => {
+  try {
+    const result = await User.deleteOne({ name });
+    return {
+      success: result && true,
+    };
+  }
+  catch (error) {
+    log.error(`[database]: remove user error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
+
 //#endregion
 
 //#region Posts
@@ -188,6 +226,23 @@ const removePost = async (title) => {
   }
 };
 
+const getPosts = async (title) => {
+  try {
+    const posts = await Post.find({});
+    return {
+      success: true,
+      data: posts,
+    };
+  }
+  catch (error) {
+    log.error(`[database]: get posts error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    }
+  }
+}
+
 //#endregion
 
 module.exports = {
@@ -197,4 +252,5 @@ module.exports = {
   addPost,
   editPost,
   removePost,
+  getPosts,
 };

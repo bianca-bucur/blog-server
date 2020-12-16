@@ -1,1 +1,11 @@
 [2020-12-14T15:26:25.611] [INFO] main -  [http]: req from 127.0.0.1 POST @ /post/add
+[2020-12-15T16:47:33.689] [INFO] main -  [http]: req from 127.0.0.1 POST @ /post/add
+[2020-12-16T09:45:21.018] [INFO] main -  [http]: req from 127.0.0.1 POST @ /post/add
+[2020-12-16T09:47:32.736] [INFO] main -  [http]: req from 127.0.0.1 POST @ /post/add
+[2020-12-16T09:50:43.786] [INFO] main -  [http]: req from 127.0.0.1 POST @ /post/add
+[2020-12-16T09:50:58.850] [INFO] main -  [http]: req from 127.0.0.1 POST @ /post/add
+[2020-12-16T09:51:54.948] [INFO] main -  [http]: req from 127.0.0.1 POST @ /post/add
+[2020-12-16T09:51:55.034] [ERROR] main -  [ERROR] [database]: error adding blog post: Cannot destructure property `content` of 'undefined' or 'null'.
+[2020-12-16T09:51:55.035] [ERROR] main -  [ERROR] [post]: POST /add -> [post]: POST /addPost -> error TypeError: Cannot destructure property `content` of 'undefined' or 'null'.
+[2020-12-16T09:52:27.432] [INFO] main -  [http]: req from 127.0.0.1 POST @ /post/add
+[2020-12-16T11:19:19.341] [INFO] main -  [http]: req from 127.0.0.1 GET @ /post/all

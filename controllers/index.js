@@ -8,9 +8,11 @@ const {
 
 controllers.use((req, res, next) => {
   log.info(`[http]: req from ${req.connection.remoteAddress} ${req.method} @ ${req.path}`);
+  next();
 });
 
 controllers.use(async (req, res, next) => {
+  console.log('middleware');
   next();
 });
 
