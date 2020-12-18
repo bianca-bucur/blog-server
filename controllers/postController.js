@@ -5,7 +5,8 @@ const {
   addPost,
   editPost,
   removePost,
-  getPosts,
+  getPost,
+  getAllPosts,
 } = require('../modules/database');
 
 const postController = express.Router();
@@ -116,7 +117,7 @@ postController.delete('/removePost', async (req, res) => {
 
 postController.get('/all', async (req, res) => {
   try {
-    const result = await getPosts();
+    const result = await getAllPosts();
 
     console.log(result);
 

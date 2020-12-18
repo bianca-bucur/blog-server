@@ -114,6 +114,34 @@ const authUser = async (name, password) => {
   }
 };
 
+const getUser = async (name) => {
+  try {
+    const user = await User.findOne({ name });
+    return user;
+  }
+  catch (error) {
+    log.error(`[database]: get user error: ${error.message}`);
+    return false;
+  }
+}
+
+const getAllUsers = async () => {
+  try {
+    const users = await User.find({});
+    return {
+      success: true,
+      users,
+    }
+  }
+  catch (error) {
+    log.error(`[database]: get all users error: ${error.message}`);
+    return {
+      sucess: false,
+      error,
+    }
+  }
+}
+
 const editUser = async (name, newUserData) => {
   try {
     const user = await User.findOne({ name });
@@ -226,7 +254,18 @@ const removePost = async (title) => {
   }
 };
 
-const getPosts = async (title) => {
+const getPost = async (title) => {
+  try {
+    const post = await Post.findOne({ title });
+    return post;
+  }
+  catch(error) {
+    log.error(`[database]: get one post error: ${error.message}`);
+    return false;
+  }
+}
+
+const getAllPosts = async () => {
   try {
     const posts = await Post.find({});
     return {
@@ -249,8 +288,13 @@ module.exports = {
   connectToDB,
   addUser,
   authUser,
+  getUser,
+  getAllUsers,
+  editUser,
+  removeUser,
   addPost,
   editPost,
   removePost,
-  getPosts,
+  getPost,
+  getAllPosts,
 };

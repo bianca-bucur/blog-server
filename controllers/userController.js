@@ -2,7 +2,11 @@ const express = require('express');
 const log = require('../utils/log');
 const {
   addUser,
+  authUser,
+  getUser,
+  getAllUsers,
   editUser,
+  removeUser,
 } = require('../modules/database');
 
 const userController = express.Router();
@@ -26,7 +30,7 @@ userController.post('/add', async (req, res) => {
         throw new Error(`[user]: POST /add -> bad body: ${JSON.stringify(body)}`);
       }
       else {
-        const result = await (username, password, 0);
+        const result = await addUser(username, password, 0);
 
         if (!result.success) {
           throw new Error(`[user]: add user failed: ${result.error.message}`);
@@ -43,6 +47,6 @@ userController.post('/add', async (req, res) => {
   }
 });
 
-  
-  
+
+
 module.exports = userController;
