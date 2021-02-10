@@ -18,3 +18,25 @@
 [2021-02-03T12:52:25.613] [ERROR] main -  [ERROR] [database]: could not create user collection
 [2021-02-03T12:54:23.618] [ERROR] main -  [ERROR] [database]: could not create user collection
 [2021-02-03T12:55:45.415] [ERROR] main -  [ERROR] [database]: add user error: Document failed validation
+[2021-02-10T16:22:04.406] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:26:23.954] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:26:39.749] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:39:31.641] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:42:07.011] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:42:45.632] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:43:30.460] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:43:39.821] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:45:35.462] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:45:45.675] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:45:45.677] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-10T16:46:07.016] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:46:07.019] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-10T16:47:13.789] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:47:13.792] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-10T16:49:36.043] [ERROR] main -  [ERROR] [database]: Assignment to constant variable.
+[2021-02-10T16:49:53.962] [ERROR] main -  [ERROR] [database]: Assignment to constant variable.
+[2021-02-10T16:50:06.927] [ERROR] main -  [ERROR] [database]: Assignment to constant variable.
+[2021-02-10T16:50:16.185] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:50:16.187] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-10T16:51:23.124] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-10T16:51:23.143] [ERROR] main -  [ERROR] [database]: could not create posts collection

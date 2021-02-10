@@ -4,12 +4,13 @@ const log = require('../../utils/log');
 const { customAlphabet } = require('nanoid');
 
 const userSchema = require('./schemas/userSchema');
+const postSchema = require('./schemas/postSchema');
 // const User = require('./models/users');
 // const Post = require('./models/blogPost');
 
 let db = null;
 let User = null;
-const Post = null;
+let Post = null;
 
 const client = new MongoClient('mongodb://localhost/blog', {
   useUnifiedTopology: true,
@@ -20,6 +21,7 @@ const connectToDB = async () => {
     await client.connect();
     db = client.db('blog');
     User = db.collection('users');
+    Post = db.collection('posts');
     console.log('connected to db');
     return true;
   }
@@ -33,13 +35,28 @@ const connectToDB = async () => {
 
 const createUserCollection = async () => {
   try {
-    const collectionExists = await db.getCollection('users').exists();
-    console.log('collection:', collectionExists);
-    // if (!collectionExists) {
-    //   await db.createCollection('users', {
-    //     validator: userSchema,
-    //   });
-    // }
+    const shouldCreate = db.listCollections({ name: 'users' })
+      .next((err, collInfo) => {
+        if (err) {
+          return {
+            success: false,
+            err,
+          };
+        }
+        if (!collInfo) {
+          return {
+            success: true,
+          };
+        }
+      });
+    if (shouldCreate.success) {
+      await db.createCollection('users', {
+        validator: userSchema,
+      });
+    }
+    else {
+      throw new Error(`[database]: error creating users collection: ${shouldCreate.err}`);
+    }
   }
   catch (error) {
     log.error('[database]: could not create user collection');
@@ -58,7 +75,6 @@ const addUser = async (newUser) => {
     const userExists = await User.findOne({ username });
     if (!userExists) {
       const saltRounds = 10;
-      console.log(password);
       const hash = await bcrypt.hash(password, saltRounds);
       if (!hash) {
         throw new Error('[database]: could not create hash');
@@ -102,6 +118,66 @@ const getAllUsers = async () => {
 };
 
 
+//#endregion
+
+//#region Posts
+
+const createPostCollection = async () => {
+  try {
+    const shouldCreate = db.listCollections({ name: 'posts' })
+      .next((err, collInfo) => {
+        if (err) {
+          return {
+            success: false,
+            err,
+          };
+        }
+        if (!collInfo) {
+          return {
+            success: true,
+          };
+        }
+      });
+    if (shouldCreate.success) {
+      await db.createCollection('posts', {
+        validator: postSchema,
+      });
+    }
+    else {
+      throw new Error(`[database]: error creating posts collection: ${shouldCreate.err}`);
+    }
+  }
+  catch (error) {
+    log.error('[database]: could not create posts collection');
+  }
+};
+
+const addPost = async (newPost) => {
+  try {
+    const {
+      title,
+      author,
+      content,
+      category,
+      createdOn,
+    } = newPost;
+    const userExists = await User.findOne({ username: author });
+    if (userExists) {
+
+      const result = await Post.insertOne(newPost);
+
+      if (result.insertedCount < 1) {
+        throw new Error('[database]: could not insert new post');
+      }
+      return {
+        success: true,
+      };
+    }
+  }
+  catch (error) {
+    log.error(`[database]: add user error: ${error.message}`);
+  }
+};
 //#endregion
 
 //#region Users
@@ -352,6 +428,8 @@ module.exports = {
   createUserCollection,
   getAllUsers,
   addUser,
+  createPostCollection,
+  addPost,
   // authUser,
   // getUser,
   // editUser,

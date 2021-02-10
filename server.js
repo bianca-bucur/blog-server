@@ -13,7 +13,9 @@ const {
   connectToDB,
   getAllUsers,
   createUserCollection,
+  createPostCollection,
   addUser,
+  addPost,
 } = require('./modules/database');
 const config = require('./config');
 
@@ -44,12 +46,20 @@ const main = async () => {
   const httpServer = http.createServer(app);
   httpServer.listen(port, ip);
 
-  // await createUserCollection();
+  await createUserCollection();
+  await createPostCollection();
   await addUser({
     name: 'Jane Doe',
     username: 'user2',
     password: 'pass2',
     type: 'admin',
+    createdOn: new Date(Date.now()),
+  });
+  await addPost({
+    title:'test title',
+    author: 'user2',
+    content:'test content',
+    category: 'test',
     createdOn: new Date(Date.now()),
   });
   await getAllUsers();
