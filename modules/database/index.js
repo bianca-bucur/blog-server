@@ -8,7 +8,7 @@ const postSchema = require('./schemas/postSchema');
 // const User = require('./models/users');
 // const Post = require('./models/blogPost');
 
-let db = null;
+var db = null;
 let User = null;
 let Post = null;
 
@@ -33,33 +33,54 @@ const connectToDB = async () => {
 
 //#region Users
 
-const createUserCollection = async () => {
+const newUserColl = async () => {
+  await db.createCollection('users', {
+    validator: userSchema,
+  });
+};
+
+const createUserCollection = () => {
   try {
-    const shouldCreate = db.listCollections({ name: 'users' })
-      .next((err, collInfo) => {
-        if (err) {
-          return {
-            success: false,
-            err,
-          };
-        }
-        if (!collInfo) {
-          return {
-            success: true,
-          };
-        }
-      });
-    if (shouldCreate.success) {
-      await db.createCollection('users', {
-        validator: userSchema,
-      });
-    }
-    else {
-      throw new Error(`[database]: error creating users collection: ${shouldCreate.err}`);
-    }
+    const shouldCreate = new Promise((resolve) => {
+      db.listCollections({ name: 'users' })
+        .next((err, collInfo) => {
+          console.log('a');
+          if (err) {
+            console.log('b');
+
+            return resolve({
+              success: false,
+              err,
+            });
+          }
+          else if (!collInfo) {
+            console.log('c');
+
+            return resolve({
+              success: true,
+            });
+          }
+          else {
+            console.log('d');
+
+            return resolve({
+              success: false,
+              err: 'collections exists',
+            });
+          }
+        });
+    });
+    shouldCreate.then((result) => {
+      if (result.success) {
+        setTimeout(newUserColl.bind(db, shouldCreate));
+      }
+      else {
+        throw new Error(result.err);
+      }
+    });
   }
   catch (error) {
-    log.error('[database]: could not create user collection');
+    log.error(`[database]: could not create user collection ${error}`);
   }
 };
 
@@ -122,33 +143,54 @@ const getAllUsers = async () => {
 
 //#region Posts
 
+const newPostsColl = async () => {
+  await db.createCollection('posts', {
+    validator: postSchema,
+  });
+};
+
 const createPostCollection = async () => {
   try {
-    const shouldCreate = db.listCollections({ name: 'posts' })
-      .next((err, collInfo) => {
-        if (err) {
-          return {
-            success: false,
-            err,
-          };
-        }
-        if (!collInfo) {
-          return {
-            success: true,
-          };
-        }
-      });
-    if (shouldCreate.success) {
-      await db.createCollection('posts', {
-        validator: postSchema,
-      });
-    }
-    else {
-      throw new Error(`[database]: error creating posts collection: ${shouldCreate.err}`);
-    }
+    const shouldCreate = new Promise((resolve) => {
+      db.listCollections({ name: 'posts' })
+        .next((err, collInfo) => {
+          console.log('a');
+          if (err) {
+            console.log('b');
+
+            return resolve({
+              success: false,
+              err,
+            });
+          }
+          else if (!collInfo) {
+            console.log('c');
+
+            return resolve({
+              success: true,
+            });
+          }
+          else {
+            console.log('d');
+
+            return resolve({
+              success: false,
+              err: 'collections exists',
+            });
+          }
+        });
+    });
+    shouldCreate.then((result) => {
+      if (result.success) {
+        setTimeout(newPostsColl.bind(db, shouldCreate));
+      }
+      else {
+        throw new Error(result.err);
+      }
+    });
   }
   catch (error) {
-    log.error('[database]: could not create posts collection');
+    log.error(`[database]: could not create posts collection ${error}`);
   }
 };
 
@@ -175,7 +217,7 @@ const addPost = async (newPost) => {
     }
   }
   catch (error) {
-    log.error(`[database]: add user error: ${error.message}`);
+    log.error(`[database]: add post error: ${error.message}`);
   }
 };
 //#endregion

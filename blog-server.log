@@ -40,3 +40,261 @@
 [2021-02-10T16:50:16.187] [ERROR] main -  [ERROR] [database]: could not create posts collection
 [2021-02-10T16:51:23.124] [ERROR] main -  [ERROR] [database]: could not create user collection
 [2021-02-10T16:51:23.143] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T09:45:56.698] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T09:45:56.700] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T09:47:09.343] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T09:47:09.345] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:20:35.832] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:20:35.834] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:21:04.321] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:21:04.325] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:21:29.295] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:21:29.297] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:22:06.680] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:22:06.684] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:26:54.849] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:26:54.853] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:31:19.670] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:31:19.716] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:42:33.610] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:42:33.613] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:43:12.097] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:43:12.100] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:44:31.127] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:44:31.130] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:44:57.389] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:44:57.393] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:47:08.055] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:47:08.059] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T10:47:21.997] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T10:47:22.000] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:02:34.053] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:02:34.057] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:02:47.597] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:02:47.599] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:03:11.006] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:03:11.009] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:04:33.084] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:04:33.088] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:05:06.987] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:05:06.991] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:05:34.048] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:05:34.051] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:05:45.701] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:05:45.704] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:08:45.739] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:08:45.742] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:08:59.792] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:08:59.795] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:13:13.005] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:13:13.008] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:13:28.186] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:13:28.189] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:13:41.487] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:13:41.490] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:45:26.552] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:45:26.555] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:45:42.986] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:45:42.990] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:45:50.900] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:45:50.904] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:46:54.435] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:46:54.438] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:47:04.367] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:47:04.370] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:56:28.539] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:56:28.542] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:56:28.563] [ERROR] main -  [ERROR] [database]: add user error: data and salt arguments required
+[2021-02-11T11:56:51.906] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:56:51.909] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T11:56:51.926] [ERROR] main -  [ERROR] [database]: add user error: data and salt arguments required
+[2021-02-11T11:57:34.869] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T11:57:34.873] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:03:23.029] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:03:23.032] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:03:36.611] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:03:36.622] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:04:01.390] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:04:01.392] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:05:25.941] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:05:25.946] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:19:59.133] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:19:59.137] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:20:26.778] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:20:26.781] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:22:06.148] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:22:06.151] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:22:56.665] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:22:56.667] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:23:06.961] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:23:06.964] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:23:12.664] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T12:23:12.666] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:23:45.473] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:23:45.476] [ERROR] main -  [ERROR] [database]: could not create posts collection
+[2021-02-11T12:25:03.401] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:25:03.404] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:25:41.809] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:25:41.814] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:26:32.394] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:26:32.397] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:26:49.956] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:26:49.960] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:28:06.613] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:28:06.617] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:42:17.153] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:42:17.156] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:53:12.440] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:53:12.442] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:53:27.313] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:53:27.316] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:53:58.482] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:53:58.486] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:54:26.998] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:54:27.011] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:54:33.508] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:54:33.512] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:55:00.917] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:55:00.922] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:57:13.808] [ERROR] main -  [ERROR] [database]: could not create user collection Error:  undefined
+[2021-02-11T12:57:13.814] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:57:35.648] [ERROR] main -  [ERROR] [database]: could not create user collection Error:  undefined
+[2021-02-11T12:57:35.657] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:57:49.944] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:57:49.947] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:58:05.036] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:58:05.041] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:58:25.433] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T12:58:25.436] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:01:37.760] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T13:01:37.764] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:03:15.696] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2021-02-11T13:03:15.700] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:03:26.339] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:03:26.343] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:03:37.132] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:03:37.136] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:05:03.989] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:05:03.992] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:05:43.392] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:05:43.395] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:08:01.542] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:08:01.544] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:09:31.701] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:09:31.703] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:09:39.159] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:09:39.162] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:10:11.333] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:10:11.335] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:10:59.333] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:10:59.336] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:12:23.120] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:12:23.123] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:15:25.059] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:15:25.062] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:16:00.651] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:16:00.655] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:16:21.391] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:16:21.395] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:16:27.824] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:16:27.826] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:18:54.651] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:18:54.655] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:19:06.847] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: db.listCollections(...).toArray(...).next is not a function
+[2021-02-11T13:19:06.850] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:22:27.956] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:22:27.959] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:26:41.567] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:26:41.571] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:27:10.891] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:27:10.893] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:33:17.362] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:33:17.364] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:33:31.060] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:33:31.064] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:34:16.133] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:34:16.136] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:35:59.042] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:35:59.047] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:37:26.595] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:37:26.598] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:37:48.361] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:37:48.365] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:37:53.783] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:37:53.786] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:38:07.786] [ERROR] main -  [ERROR] [database]: could not create user collection Error
+[2021-02-11T13:38:07.792] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:38:25.093] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:38:25.095] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:40:32.259] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:40:32.263] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:41:29.391] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:41:29.393] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:41:41.177] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T13:41:41.179] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:15:22.874] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:15:22.876] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:22:25.032] [ERROR] main -  [ERROR] [database]: could not create user collection Error
+[2021-02-11T14:22:25.036] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:22:44.688] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'collInfo' of undefined
+[2021-02-11T14:22:44.693] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:22:48.782] [ERROR] main -  [ERROR] [database]: could not create user collection Error
+[2021-02-11T14:22:48.787] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:23:45.334] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:23:45.337] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:24:45.269] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:24:45.272] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:24:52.180] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:24:52.183] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:30:50.029] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:30:50.032] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:31:01.151] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:31:01.153] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:31:55.666] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:31:55.669] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:32:15.174] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:32:15.176] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:32:40.058] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:32:40.061] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:33:02.085] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:33:02.088] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:33:11.276] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:33:11.279] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:34:06.339] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'close' of undefined
+[2021-02-11T14:34:06.342] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:34:20.696] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'close' of undefined
+[2021-02-11T14:34:20.701] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:55:36.483] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:55:36.485] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:56:39.162] [ERROR] main -  [ERROR] [database]: could not create user collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T14:56:39.168] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:05:34.400] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:05:55.976] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:06:15.794] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:06:25.046] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:06:45.477] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:07:13.084] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:08:51.209] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:11:52.575] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:12:07.431] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:12:11.810] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:24:37.255] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:24:37.403] [ERROR] main -  [ERROR] [database]: add user error: Document failed validation
+[2021-02-11T15:24:48.375] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:24:48.527] [ERROR] main -  [ERROR] [database]: add user error: Document failed validation
+[2021-02-11T15:28:36.248] [ERROR] main -  [ERROR] [database]: could not create posts collection TypeError: Cannot read property 'success' of undefined
+[2021-02-11T15:42:29.311] [ERROR] main -  [ERROR] [database]: add user error: Document failed validation
+[2021-02-11T15:42:35.650] [ERROR] main -  [ERROR] [database]: add user error: Document failed validation
+[2021-02-11T15:43:00.526] [ERROR] main -  [ERROR] [database]: add user error: Document failed validation
+[2021-02-11T15:43:05.833] [ERROR] main -  [ERROR] [database]: add user error: Document failed validation
+[2021-02-11T15:43:33.587] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T15:45:17.433] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T15:50:32.143] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T15:51:54.777] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T15:51:58.485] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T15:52:13.172] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T15:52:38.322] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T16:38:30.872] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T16:38:45.371] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T16:38:49.649] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-11T16:38:57.720] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation

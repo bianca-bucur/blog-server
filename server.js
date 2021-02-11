@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const cofing = require('./config');
 const bodyParser = require('body-parser');
 const controllers = require('./controllers');
 const log = require('./utils/log');
@@ -48,19 +47,26 @@ const main = async () => {
 
   await createUserCollection();
   await createPostCollection();
-  await addUser({
-    name: 'Jane Doe',
-    username: 'user2',
-    password: 'pass2',
-    type: 'admin',
-    createdOn: new Date(Date.now()),
-  });
+  // await addUser({
+  //   name: 'Jane Doe',
+  //   username: 'user2',
+  //   password: 'pass2',
+  //   type: 'admin',
+  //   createdOn: new Date(Date.now()),
+  // });
   await addPost({
     title:'test title',
     author: 'user2',
     content:'test content',
     category: 'test',
     createdOn: new Date(Date.now()),
+    comments: [{
+      name: 'Jane Doe',
+      username: 'user2',
+      password: 'pass2',
+      type: 'admin',
+      createdOn: new Date(Date.now()),
+    }],
   });
   await getAllUsers();
 };
