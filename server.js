@@ -15,6 +15,12 @@ const {
   createPostCollection,
   addUser,
   addPost,
+  getAllPosts,
+  removePost,
+  addComment,
+  editPost,
+  authUser,
+  editComment,
 } = require('./modules/database');
 const config = require('./config');
 
@@ -47,15 +53,15 @@ const main = async () => {
 
   await createUserCollection();
   await createPostCollection();
-  // await addUser({
-  //   name: 'Jane Doe',
-  //   username: 'user2',
-  //   password: 'pass2',
-  //   type: 'admin',
-  //   createdOn: new Date(Date.now()),
-  // });
+  await addUser({
+    name: 'Jane Doe',
+    username: 'user2',
+    password: 'pass2',
+    type: 'admin',
+    createdOn: new Date(Date.now()),
+  });
   await addPost({
-    title:'test title',
+    title:'test title1',
     author: 'user2',
     content:'test content',
     category: 'test',
@@ -68,7 +74,59 @@ const main = async () => {
       createdOn: new Date(Date.now()),
     }],
   });
-  await getAllUsers();
+  await addPost({
+    title:'test title2',
+    author: 'user2',
+    content:'test content',
+    category: 'test',
+    createdOn: new Date(Date.now()),
+    comments: [{
+      name: 'Jane Doe',
+      username: 'user2',
+      type: 'admin',
+      title: 'test comment1',
+      content: 'test comment content',
+      createdOn: new Date(Date.now()),
+    }],
+  });
+  await addPost({
+    title:'test title10',
+    author: 'user2',
+    content:'test content',
+    category: 'test',
+    createdOn: new Date(Date.now()),
+  });
+  // await addComment('user2',
+  //   {
+  //     name: 'Jane Doe',
+  //     username: 'user2',
+  //     type: 'admin',
+  //     title: 'test comment5',
+  //     content: 'test comment content4',
+  //     createdOn: new Date(Date.now()),
+  //   },
+  //   'test title10',
+  // );
+  await editComment('user2',
+    {
+      name: 'Jane Doe',
+      username: 'user2',
+      type: 'admin',
+      title: 'test comment5',
+      content: 'test comment content4 fdsjaofoisdaojiassadojfsadoj',
+      createdOn: new Date(Date.now()),
+    },
+    'test title10',
+    'test comment5',
+  );
+  // const users = await getAllUsers();
+  // const posts = await getAllPosts();
+  // if (users.data) {
+  //   console.log(users.data);
+  // }
+  // if (posts.data) {
+  //   console.log(posts.data);
+  // }
 };
 
 main();

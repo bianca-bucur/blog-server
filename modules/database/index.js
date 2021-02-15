@@ -41,29 +41,22 @@ const newUserColl = async () => {
 
 const createUserCollection = () => {
   try {
-    const shouldCreate = new Promise((resolve) => {
+    const shouldCreate = new Promise((resolve, reject) => {
       db.listCollections({ name: 'users' })
         .next((err, collInfo) => {
-          console.log('a');
           if (err) {
-            console.log('b');
-
-            return resolve({
+            reject({
               success: false,
               err,
             });
           }
           else if (!collInfo) {
-            console.log('c');
-
-            return resolve({
+            resolve({
               success: true,
             });
           }
           else {
-            console.log('d');
-
-            return resolve({
+            reject({
               success: false,
               err: 'collections exists',
             });
@@ -74,13 +67,81 @@ const createUserCollection = () => {
       if (result.success) {
         setTimeout(newUserColl.bind(db, shouldCreate));
       }
-      else {
-        throw new Error(result.err);
-      }
-    });
+    })
+      .catch((result) => {
+        log.error(`[database]: could not create user collection ${result.err}`);
+      });
   }
   catch (error) {
     log.error(`[database]: could not create user collection ${error}`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const getAllUsers = async () => {
+  try {
+
+    const users = await User.find({}).toArray();
+    if ((users.length === 0)) {
+      throw new Error('no users');
+    }
+    else {
+      return {
+        success: true,
+        data: users,
+      };
+    }
+  }
+  catch (error) {
+    log.error(`[database]: get all users error: ${error.message}`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const authUser = async (username, password) => {
+  try {
+    const user = await User.findOne({username: username});
+    if (user) {
+      const getToken = () => {
+        const alphabet = '1234567890abcdefghijklmnopqrstuvwxyz!@#$%^&*(){}][<>,.~';
+        const nanoid = customAlphabet(alphabet, alphabet.length);
+        return nanoid();
+      };
+
+      const result = await bcrypt.compare(password, user.password);
+
+      if (result) {
+        const authToken = getToken();
+        user.token = authToken;
+        await User.updateOne({username: username}, {
+          $set: {
+            token: authToken,
+          },
+        });
+        return {
+          success: true,
+          token: user.token,
+          type: user.type,
+        };
+      }
+      else {
+        throw new Error(`password for ${username} does not match ${password}`);
+      }
+    }
+    else {
+      throw new Error(`user ${username} does not exist`);
+    }
+  }
+  catch (error) {
+    log.write(`[database]: auth user error: ${error.message}`);
+    return {
+      success: false,
+      error: error.message,
+    };
   }
 };
 
@@ -98,7 +159,7 @@ const addUser = async (newUser) => {
       const saltRounds = 10;
       const hash = await bcrypt.hash(password, saltRounds);
       if (!hash) {
-        throw new Error('[database]: could not create hash');
+        throw new Error('could not create hash');
       }
       else {
         const user = {
@@ -113,7 +174,7 @@ const addUser = async (newUser) => {
         const result = await User.insertOne(user);
 
         if (result.insertedCount < 1) {
-          throw new Error('[database]: could not insert new user');
+          throw new Error('could not insert new user');
         }
         return {
           success: true,
@@ -123,21 +184,48 @@ const addUser = async (newUser) => {
   }
   catch (error) {
     log.error(`[database]: add user error: ${error.message}`);
+    return {
+      success: false,
+    };
   }
 };
 
-const getAllUsers = async () => {
-  const users = User.find({});
-  if ((await users.count() === 0)) {
-    console.log('no users');
+const removeUser = async (username) => {
+  try {
+    const result = await User.deleteOne({ username });
+    if (result.deletedCount === 1) {
+      return {
+        success: true,
+      };
+    }
+    else {
+      throw new Error('no such user');
+    }
   }
-  else {
-    users.forEach(user => {
-      console.log(user);
-    });
+  catch (error) {
+    log.error(`[database]: remove user error: ${error.message}`);
+    return {
+      success: false,
+    };
   }
 };
 
+const editUser = async (username, editedUser) => {
+  try {
+    const result = await User.updateOne(username, { $set: editedUser });
+    if (result.matchedCount !== 0) {
+      return {
+        success: true,
+      };
+    }
+    else {
+      throw new Error('no such user');
+    }
+  }
+  catch (error) {
+    log.error(`[database]: edit user error: ${error.message}`);
+  }
+};
 
 //#endregion
 
@@ -151,14 +239,14 @@ const newPostsColl = async () => {
 
 const createPostCollection = async () => {
   try {
-    const shouldCreate = new Promise((resolve) => {
+    const shouldCreate = new Promise((resolve, reject) => {
       db.listCollections({ name: 'posts' })
         .next((err, collInfo) => {
           console.log('a');
           if (err) {
             console.log('b');
 
-            return resolve({
+            reject({
               success: false,
               err,
             });
@@ -166,14 +254,14 @@ const createPostCollection = async () => {
           else if (!collInfo) {
             console.log('c');
 
-            return resolve({
+            resolve({
               success: true,
             });
           }
           else {
             console.log('d');
 
-            return resolve({
+            reject({
               success: false,
               err: 'collections exists',
             });
@@ -184,13 +272,37 @@ const createPostCollection = async () => {
       if (result.success) {
         setTimeout(newPostsColl.bind(db, shouldCreate));
       }
-      else {
-        throw new Error(result.err);
-      }
-    });
+    })
+      .catch((result) => {
+        log.error(`[database]: could not create posts collection ${result.err}`);
+      });
   }
   catch (error) {
-    log.error(`[database]: could not create posts collection ${error}`);
+    log.error(`[database]: could not create posts collection ${error.message}`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const getAllPosts = async () => {
+  try {
+    const posts = await Post.find().toArray();
+    if ((posts.length === 0)) {
+      throw new Error('no posts');
+    }
+    else {
+      return {
+        success: true,
+        data: posts,
+      };
+    }
+  }
+  catch (error) {
+    log.error(`[database]: get all posts error: ${error.message}`);
+    return {
+      success: false,
+    };
   }
 };
 
@@ -205,21 +317,145 @@ const addPost = async (newPost) => {
     } = newPost;
     const userExists = await User.findOne({ username: author });
     if (userExists) {
+      const postExists = await Post.findOne({ title });
+      if (!postExists) {
+        const result = await Post.insertOne(newPost);
 
-      const result = await Post.insertOne(newPost);
-
-      if (result.insertedCount < 1) {
-        throw new Error('[database]: could not insert new post');
+        if (result.insertedCount < 1) {
+          throw new Error('[database]: could not insert new post');
+        }
+        return {
+          success: true,
+        };
       }
-      return {
-        success: true,
-      };
+      else {
+        throw new Error(`post with title '${title}' already exists`);
+      }
+    }
+    else {
+      throw new Error('author is not a registered user');
     }
   }
   catch (error) {
     log.error(`[database]: add post error: ${error.message}`);
+    return {
+      success: false,
+    };
   }
 };
+
+const removePost = async (title) => {
+  try {
+    const result = await Post.deleteOne(title);
+    if (result.deletedCount === 1) {
+      return {
+        success: true,
+      };
+    }
+    else {
+      throw new Error(`no such post with title '${title.title}'`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: remove post error: ${error.message}`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const editPost = async (title, editedPost) => {
+  try {
+    const result = await Post.updateOne(title, { $set: editedPost });
+    if (result.matchedCount !== 0) {
+      return {
+        success: true,
+      };
+    }
+    else {
+      throw new Error('no such post');
+    }
+  }
+  catch (error) {
+    log.error(`[database]: edit post error: ${error.message}`);
+  }
+};
+
+
+//#endregion
+
+//#region Comments
+
+const addComment = async (author, comment, title) => {
+  try {
+    const userExists = await User.findOne({ username: author });
+    if (userExists) {
+      const postExists = await Post.findOne({title: title});
+      const updateDocument = {
+        $push: {
+          'comments': comment,
+        },
+      };
+      if (postExists) {
+        console.log(postExists);
+        const result = await Post.updateOne( {title: title}, updateDocument);
+        if (result.matchedCount !== 0) {
+          return {
+            success: true,
+          };
+        }
+        else {
+          throw new Error('no such post');
+        }
+      }
+      else {
+        throw new Error(`no post with title '${title}'`);
+      }
+    }
+    else {
+      throw new Error(`no user with name '${author}' exists`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: add comment error: ${error.message}`);
+  }
+};
+
+const editComment = async (author, comment, title, commentTitle) => {
+  try {
+    const userExists = await User.findOne({ username: author });
+    if (userExists) {
+      const postExists = await Post.findOne({title: title});
+      const updateDocument = {
+        $set: {
+          'comments.$[]': comment,
+        },
+      };
+      console.log(updateDocument);
+      if (postExists) {
+        const result = await Post.updateOne( {title: title, 'comments.title': commentTitle}, updateDocument);
+        if (result.matchedCount !== 0) {
+          return {
+            success: true,
+          };
+        }
+        else {
+          throw new Error('no such post');
+        }
+      }
+      else {
+        throw new Error(`no post with title '${title}'`);
+      }
+    }
+    else {
+      throw new Error(`no user with name '${author}' exists`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: edit comment error: ${error.message}`);
+  }
+};
+
 //#endregion
 
 //#region Users
@@ -469,9 +705,17 @@ module.exports = {
   connectToDB,
   createUserCollection,
   getAllUsers,
+  authUser,
   addUser,
+  removeUser,
+  editUser,
   createPostCollection,
   addPost,
+  getAllPosts,
+  removePost,
+  editPost,
+  addComment,
+  editComment,
   // authUser,
   // getUser,
   // editUser,

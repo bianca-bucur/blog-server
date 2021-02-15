@@ -1,5 +1,3 @@
-const userSchema = require('./userSchema');
-
 const postSchema = {
   $jsonSchema: {
     bsonType: 'object',
@@ -29,17 +27,13 @@ const postSchema = {
         bsonType: ['array'],
         items: {
           bsonType: ['object'],
-          required: ['name', 'username', 'password', 'type', 'createdOn'],
+          required: ['name', 'username', 'type', 'createdOn', 'title', 'content'],
           properties: {
             name: {
               bsonType: 'string',
               description: 'string and required',
             },
-            username: {
-              bsonType: 'string',
-              description: 'string and required',
-            },
-            password: {
+            author: {
               bsonType: 'string',
               description: 'string and required',
             },
@@ -47,12 +41,20 @@ const postSchema = {
               bsonType: 'string',
               description: 'string and required',
             },
+            title: {
+              bsonType: 'string',
+              description: 'string and required',
+            },
+            content: {
+              bsonType: 'string',
+              description: 'string and required',
+            },
             createdOn: {
               bsonType: 'date',
               description: 'date and required',
             },
-            token: {
-              bsonType: 'string',
+            lastEditTime: {
+              bsonType: 'date',
             },
           },
         },

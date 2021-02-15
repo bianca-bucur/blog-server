@@ -298,3 +298,408 @@
 [2021-02-11T16:38:45.371] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
 [2021-02-11T16:38:49.649] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
 [2021-02-11T16:38:57.720] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T11:00:02.784] [ERROR] main -  [ERROR] [database]: could not create posts collection undefined
+[2021-02-15T11:00:04.923] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:00:18.094] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:01:17.775] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:01:21.559] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:01:52.108] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:01:52.112] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:02:15.058] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:04:03.553] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:04:03.558] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:04:12.477] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:04:24.623] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:04:24.626] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:05:32.236] [ERROR] main -  [ERROR] [database]: get all users error: no users
+[2021-02-15T11:05:32.242] [ERROR] main -  [ERROR] [database]: get all posts error: no posts
+[2021-02-15T11:05:49.086] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:05:49.090] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:05:49.096] [ERROR] main -  [ERROR] [database]: get all users error: no users
+[2021-02-15T11:05:49.098] [ERROR] main -  [ERROR] [database]: get all posts error: no posts
+[2021-02-15T11:06:22.853] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:06:22.856] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:06:32.868] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:06:32.872] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:07:07.114] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:07:07.121] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:07:25.864] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:07:25.867] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:07:32.764] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:07:32.773] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:07:40.297] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:07:40.303] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:08:00.987] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:08:00.993] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:08:06.868] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:08:06.871] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:08:24.924] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:08:24.928] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:08:58.353] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:08:58.359] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:09:33.459] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:09:33.464] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:10:23.142] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:10:23.145] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:11:03.281] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:11:03.287] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T11:29:53.075] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T11:29:53.078] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:24:42.772] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:24:42.775] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:31:36.246] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:31:36.250] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:31:48.928] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:31:48.932] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:34:26.605] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:34:26.609] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:34:26.614] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title' already exists
+[2021-02-15T13:34:49.961] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:34:49.965] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:43:11.353] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:43:11.357] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:43:11.370] [ERROR] main -  [ERROR] [database]: remove post error: no such post
+[2021-02-15T13:43:23.786] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:43:23.791] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:43:23.801] [ERROR] main -  [ERROR] [database]: remove post error: no such post
+[2021-02-15T13:43:41.325] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:43:41.329] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:43:41.340] [ERROR] main -  [ERROR] [database]: remove post error: no such post
+[2021-02-15T13:44:00.919] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:44:00.923] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:44:00.934] [ERROR] main -  [ERROR] [database]: remove post error: no such post
+[2021-02-15T13:44:13.370] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:44:13.373] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:44:13.382] [ERROR] main -  [ERROR] [database]: remove post error: no such post
+[2021-02-15T13:44:17.424] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:44:17.427] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:44:17.438] [ERROR] main -  [ERROR] [database]: remove post error: no such post
+[2021-02-15T13:44:33.388] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:44:33.392] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:44:33.401] [ERROR] main -  [ERROR] [database]: remove post error: no such post
+[2021-02-15T13:45:14.012] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:45:14.056] [ERROR] main -  [ERROR] [database]: remove post error: no such post
+[2021-02-15T13:45:35.573] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:45:35.577] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:45:35.582] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:45:35.585] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:45:35.587] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T13:45:35.595] [ERROR] main -  [ERROR] [database]: remove post error: no such post with title '[object Object]
+[2021-02-15T13:46:02.697] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:46:02.701] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:46:02.704] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:46:02.707] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:46:02.709] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T13:46:02.720] [ERROR] main -  [ERROR] [database]: remove post error: no such post with title 'test title
+[2021-02-15T13:46:12.724] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:46:12.727] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:46:12.731] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:46:12.733] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:46:12.736] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T13:46:12.747] [ERROR] main -  [ERROR] [database]: remove post error: no such post with title 'test title'
+[2021-02-15T13:46:21.938] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:46:21.942] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:46:21.950] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:46:21.954] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:46:21.958] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T13:46:21.986] [ERROR] main -  [ERROR] [database]: remove post error: no such post with title 'test title1'
+[2021-02-15T13:46:56.707] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:46:56.710] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:46:56.721] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:46:56.724] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T13:46:56.731] [ERROR] main -  [ERROR] [database]: remove post error: no such post with title 'test title3'
+[2021-02-15T13:47:37.629] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:47:37.634] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:47:37.639] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:47:37.642] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:47:37.651] [ERROR] main -  [ERROR] [database]: remove post error: no such post with title 'test title3'
+[2021-02-15T13:50:57.734] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:50:57.739] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:50:57.743] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:50:57.746] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:50:57.757] [ERROR] main -  [ERROR] [database]: remove post error: no such post with title 'test title3'
+[2021-02-15T13:51:16.765] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:51:16.769] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:51:16.775] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:51:16.778] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:51:16.841] [ERROR] main -  [ERROR] [database]: remove post error: no such post with title 'test title3'
+[2021-02-15T13:51:27.516] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:51:27.519] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:51:27.525] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:51:27.529] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:51:29.585] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:51:29.588] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:51:29.595] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:51:29.600] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:51:44.037] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:51:44.040] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:51:44.044] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:51:44.048] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:55:21.275] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:55:21.280] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:55:21.285] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:55:21.289] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:58:05.902] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:58:05.906] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:58:05.911] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:58:05.917] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:58:29.036] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:58:29.041] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:58:29.045] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:58:29.049] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:58:29.056] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T13:58:29.060] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T13:59:10.717] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:59:10.722] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:59:10.727] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:59:10.731] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:59:10.738] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T13:59:10.742] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T13:59:21.265] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T13:59:21.270] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T13:59:21.274] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T13:59:21.278] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T13:59:21.285] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T13:59:21.288] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T13:59:40.025] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:23:27.847] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:23:27.851] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:23:27.856] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T14:23:27.859] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:36:52.440] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:36:52.443] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:36:52.447] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T14:36:52.450] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:37:03.896] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:37:03.899] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:37:03.903] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-15T14:37:03.907] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:37:27.977] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:37:28.004] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:37:28.010] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:37:28.014] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:37:28.017] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T14:37:28.020] [ERROR] main -  [ERROR] [database]: get all posts error: no posts
+[2021-02-15T14:40:34.949] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:40:34.953] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:40:34.961] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:40:34.966] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:40:34.970] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:40:34.974] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T14:40:34.978] [ERROR] main -  [ERROR] [database]: get all posts error: no posts
+[2021-02-15T14:40:54.927] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:40:54.931] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:40:54.938] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:40:54.943] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:40:54.948] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:40:54.951] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T14:40:54.956] [ERROR] main -  [ERROR] [database]: get all posts error: no posts
+[2021-02-15T14:50:21.005] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:50:21.009] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:50:21.016] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:50:21.021] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:50:21.026] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:50:21.030] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T14:50:21.034] [ERROR] main -  [ERROR] [database]: get all posts error: no posts
+[2021-02-15T14:51:13.330] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:51:13.334] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:51:13.342] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:51:13.347] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:51:13.352] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:51:13.356] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T14:51:13.360] [ERROR] main -  [ERROR] [database]: get all posts error: no posts
+[2021-02-15T14:52:44.620] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:52:44.626] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:52:44.640] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:52:44.648] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:52:44.654] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:52:44.657] [ERROR] main -  [ERROR] [database]: edit post error: no such post
+[2021-02-15T14:52:44.661] [ERROR] main -  [ERROR] [database]: get all posts error: no posts
+[2021-02-15T14:53:46.673] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:53:46.677] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:53:46.685] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:53:48.135] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:53:48.140] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:53:48.147] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:53:48.151] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:54:17.347] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:54:17.350] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:54:17.356] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:54:17.359] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:56:06.866] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:56:06.870] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:56:06.877] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:56:06.880] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:56:06.887] [ERROR] main -  [ERROR] [database]: add comment error: query selector must be an object
+[2021-02-15T14:57:09.751] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:57:09.777] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:57:09.785] [ERROR] main -  [ERROR] [database]: add comment error: query selector must be an object
+[2021-02-15T14:57:11.177] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:57:11.182] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:57:11.189] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:57:11.193] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:57:11.197] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T14:57:11.200] [ERROR] main -  [ERROR] [database]: add comment error: query selector must be an object
+[2021-02-15T14:57:37.579] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:57:37.585] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:57:37.593] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:57:37.597] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:57:37.602] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T14:57:37.613] [ERROR] main -  [ERROR] [database]: add comment error: Cannot create field 'items' in element {comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment", content: "test comment content", createdOn: new Date(1613393829781) } ]}
+[2021-02-15T14:58:01.422] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:58:01.427] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:58:01.437] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:58:01.442] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:58:01.447] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T14:58:01.455] [ERROR] main -  [ERROR] [database]: add comment error: Cannot create field '$[]: comment' in element {comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment", content: "test comment content", createdOn: new Date(1613393829781) } ]}
+[2021-02-15T14:58:20.054] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:58:20.057] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:58:20.066] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:58:20.070] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:58:20.072] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T14:58:20.079] [ERROR] main -  [ERROR] [database]: add comment error: The dollar ($) prefixed field '$[]: comment' in 'items.$[]: comment' is not valid for storage.
+[2021-02-15T14:58:33.730] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:58:33.733] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:58:33.743] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:58:33.747] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:58:33.751] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T14:58:33.759] [ERROR] main -  [ERROR] [database]: add comment error: Cannot create field 'items' in element {comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment", content: "test comment content", createdOn: new Date(1613393829781) } ]}
+[2021-02-15T14:59:20.472] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:59:20.475] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:59:20.486] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:59:20.491] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:59:20.495] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T14:59:20.509] [ERROR] main -  [ERROR] [database]: add comment error: Cannot create field 'items' in element {comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment", content: "test comment content", createdOn: new Date(1613393829781) } ]}
+[2021-02-15T14:59:36.068] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:59:36.074] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:59:36.085] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:59:36.090] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:59:36.096] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T14:59:36.110] [ERROR] main -  [ERROR] [database]: add comment error: Cannot create field 'items' in element {comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment", content: "test comment content", createdOn: new Date(1613393829781) } ]}
+[2021-02-15T14:59:49.844] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T14:59:49.848] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T14:59:49.855] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T14:59:49.859] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T14:59:49.863] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T14:59:49.880] [ERROR] main -  [ERROR] [database]: add comment error: Cannot create field '$[]: comment' in element {comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment", content: "test comment content", createdOn: new Date(1613393829781) } ]}
+[2021-02-15T15:00:29.265] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:00:29.269] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:00:29.281] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:00:29.285] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:00:29.289] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T15:00:29.306] [ERROR] main -  [ERROR] [database]: add comment error: Cannot create field 'items: comment' in element {comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment", content: "test comment content", createdOn: new Date(1613393829781) } ]}
+[2021-02-15T15:00:52.935] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:00:52.940] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:00:52.948] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:00:52.953] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:00:52.957] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T15:00:52.972] [ERROR] main -  [ERROR] [database]: add comment error: Cannot create field 'items' in element {comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment", content: "test comment content", createdOn: new Date(1613393829781) } ]}
+[2021-02-15T15:01:12.535] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:01:12.540] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:01:12.549] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:01:12.554] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:01:12.559] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T15:01:36.831] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:01:36.838] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:01:36.846] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:01:36.850] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:01:36.856] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title3' already exists
+[2021-02-15T15:02:45.639] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:02:45.642] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:02:45.652] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:02:45.655] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:03:14.694] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:03:14.698] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:03:14.707] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:03:14.711] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:03:14.715] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T15:03:44.274] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:03:44.278] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:03:44.286] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:03:44.291] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:03:44.294] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T15:13:20.240] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:13:20.244] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:13:20.251] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:13:20.256] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:13:20.259] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T15:13:38.075] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:13:38.079] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:13:38.087] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:13:38.091] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:13:38.095] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T15:14:48.609] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:14:48.614] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:14:48.622] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:14:48.626] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:14:48.630] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T15:14:54.278] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:14:54.283] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:14:54.292] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:14:54.296] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:14:54.301] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T15:14:54.330] [INFO] main -  [database]: auth user error: query selector must be an object
+[2021-02-15T15:15:17.081] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T15:15:17.085] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T15:15:17.093] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T15:15:17.097] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T15:15:17.100] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:16:52.396] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:16:52.399] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:16:52.407] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:16:52.411] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:16:52.413] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:17:30.525] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:17:30.529] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:17:30.537] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:17:30.541] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:17:30.546] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:17:30.675] [INFO] main -  [database]: auth user error: password for user2 does not match gdjiosdfa890u
+[2021-02-15T16:18:34.342] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:18:34.347] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:18:34.356] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:18:34.360] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:18:34.365] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:18:34.493] [INFO] main -  [database]: auth user error: password for user2 does not match gdjiosdfa890u
+[2021-02-15T16:18:43.873] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:18:43.877] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:18:43.884] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:18:43.890] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:18:43.894] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:25:29.394] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:25:29.408] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:25:29.419] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:25:29.423] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:25:29.429] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:28:12.110] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:28:12.113] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:28:12.121] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:28:12.125] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:28:12.128] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:28:12.181] [ERROR] main -  [ERROR] [database]: edit comment error: Document failed validation
+[2021-02-15T16:30:07.887] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:30:07.928] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:30:07.967] [ERROR] main -  [ERROR] [database]: edit comment error: Document failed validation
+[2021-02-15T16:36:42.724] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:36:42.728] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:36:42.735] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:36:42.739] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:36:42.744] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:36:42.768] [ERROR] main -  [ERROR] [database]: edit comment error: Document failed validation
+[2021-02-15T16:37:05.445] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:37:05.448] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:37:05.458] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:37:05.461] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:37:05.464] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:37:56.977] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:37:57.006] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:38:04.113] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:38:04.118] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:38:04.128] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:38:04.132] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:38:04.136] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-15T16:40:06.826] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-15T16:40:06.831] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-15T16:40:06.840] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-15T16:40:06.844] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-15T16:40:06.848] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
