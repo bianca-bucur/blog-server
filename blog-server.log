@@ -703,3 +703,124 @@
 [2021-02-15T16:40:06.840] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
 [2021-02-15T16:40:06.844] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
 [2021-02-15T16:40:06.848] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:51:25.089] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:51:25.093] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:51:25.126] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:51:25.141] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:51:25.148] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:51:25.178] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T12:52:28.431] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:52:28.439] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:52:28.446] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:52:28.450] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:52:28.455] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:52:28.473] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T12:52:40.578] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:52:40.583] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:52:40.594] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:52:40.598] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:52:40.602] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:52:40.621] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot use the part (items) of (comments.items) to traverse the element ({comments: [ { name: "Jane Doe", username: "user2", type: "admin", title: "test comment1", content: "test comment content", createdOn: new Date(1613399877006) } ]})
+[2021-02-16T12:52:54.813] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:52:54.818] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:52:54.827] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:52:54.834] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:52:54.837] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:52:54.855] [ERROR] main -  [ERROR] [database]: remove comment error: The path 'comments.items' must exist in the document in order to apply array updates.
+[2021-02-16T12:53:33.893] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:53:33.900] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:53:33.907] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:53:33.911] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:53:33.916] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:53:33.933] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T12:53:57.936] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:53:57.940] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:53:57.961] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:53:57.967] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:53:57.971] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:54:18.594] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:54:18.599] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:54:18.606] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:54:18.610] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:54:18.613] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:54:18.626] [ERROR] main -  [ERROR] [database]: edit comment error: no such post
+[2021-02-16T12:54:40.065] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:54:40.069] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:54:40.076] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:54:40.080] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:54:40.083] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:54:40.095] [ERROR] main -  [ERROR] [database]: edit comment error: no such post
+[2021-02-16T12:56:43.699] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:56:43.704] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:56:43.711] [ERROR] main -  [ERROR] [database]: add post error: Document failed validation
+[2021-02-16T12:56:43.717] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:56:43.723] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:56:43.738] [ERROR] main -  [ERROR] [database]: edit comment error: no such post
+[2021-02-16T12:57:26.070] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:57:26.075] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:57:26.085] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:57:26.090] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:57:26.105] [ERROR] main -  [ERROR] [database]: edit comment error: no such post
+[2021-02-16T12:57:47.295] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:57:47.300] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:57:47.305] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T12:57:47.309] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:57:47.313] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:58:47.876] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:58:47.881] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:58:47.886] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T12:58:47.893] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:58:47.897] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:59:16.811] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:59:16.817] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:59:16.822] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T12:59:16.826] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:59:16.830] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T12:59:26.640] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T12:59:26.644] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T12:59:26.650] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T12:59:26.654] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T12:59:26.659] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T13:00:01.860] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T13:00:01.865] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T13:00:01.870] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T13:00:01.873] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T13:00:01.875] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T13:00:23.243] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T13:00:23.247] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T13:00:23.252] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T13:00:23.255] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T13:00:23.258] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T13:00:23.306] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T13:00:30.998] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T13:00:31.035] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T13:00:31.043] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T13:00:31.050] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T13:00:31.058] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T13:00:31.111] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T13:00:43.861] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T13:00:43.925] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T13:00:48.182] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T13:00:48.186] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T13:00:48.190] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T13:00:48.194] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T13:00:48.198] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T13:00:48.244] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T13:13:57.413] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T13:13:57.416] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T13:13:57.421] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T13:13:57.424] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T13:13:57.428] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T13:13:57.480] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T13:14:18.196] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T13:14:18.202] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T13:14:18.208] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T13:14:18.213] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T13:14:18.217] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T13:14:18.281] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value
+[2021-02-16T13:24:35.837] [ERROR] main -  [ERROR] [database]: could not create user collection collections exists
+[2021-02-16T13:24:35.840] [ERROR] main -  [ERROR] [database]: could not create posts collection collections exists
+[2021-02-16T13:24:35.844] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title1' already exists
+[2021-02-16T13:24:35.847] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title2' already exists
+[2021-02-16T13:24:35.850] [ERROR] main -  [ERROR] [database]: add post error: post with title 'test title10' already exists
+[2021-02-16T13:24:35.925] [ERROR] main -  [ERROR] [database]: remove comment error: Cannot apply $pull to a non-array value

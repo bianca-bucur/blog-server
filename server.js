@@ -21,6 +21,7 @@ const {
   editPost,
   authUser,
   editComment,
+  removeComment,
 } = require('./modules/database');
 const config = require('./config');
 
@@ -69,8 +70,9 @@ const main = async () => {
     comments: [{
       name: 'Jane Doe',
       username: 'user2',
-      password: 'pass2',
       type: 'admin',
+      title: 'test comment31',
+      content: 'test comment content fdsjoifsdijfdssdfiajsdi',
       createdOn: new Date(Date.now()),
     }],
   });
@@ -96,17 +98,28 @@ const main = async () => {
     category: 'test',
     createdOn: new Date(Date.now()),
   });
-  // await addComment('user2',
-  //   {
-  //     name: 'Jane Doe',
-  //     username: 'user2',
-  //     type: 'admin',
-  //     title: 'test comment5',
-  //     content: 'test comment content4',
-  //     createdOn: new Date(Date.now()),
-  //   },
-  //   'test title10',
-  // );
+  await addComment('user2',
+    {
+      name: 'Jane Doe',
+      username: 'user2',
+      type: 'admin',
+      title: 'test comment5',
+      content: 'test comment content4',
+      createdOn: new Date(Date.now()),
+    },
+    'test title10',
+  );
+  await addComment('user2',
+    {
+      name: 'Jane Doe',
+      username: 'user2',
+      type: 'admin',
+      title: 'test comment1',
+      content: 'test comment content4fdsafdsasa',
+      createdOn: new Date(Date.now()),
+    },
+    'test title10',
+  );
   await editComment('user2',
     {
       name: 'Jane Doe',
@@ -119,14 +132,15 @@ const main = async () => {
     'test title10',
     'test comment5',
   );
-  // const users = await getAllUsers();
-  // const posts = await getAllPosts();
-  // if (users.data) {
-  //   console.log(users.data);
-  // }
-  // if (posts.data) {
-  //   console.log(posts.data);
-  // }
+  await removeComment('test title10', 'test comment5');
+  const users = await getAllUsers();
+  const posts = await getAllPosts();
+  if (users.data) {
+    console.log(users.data);
+  }
+  if (posts.data) {
+    console.log(posts.data);
+  }
 };
 
 main();

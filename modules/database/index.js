@@ -76,6 +76,7 @@ const createUserCollection = () => {
     log.error(`[database]: could not create user collection ${error}`);
     return {
       success: false,
+      error,
     };
   }
 };
@@ -98,6 +99,7 @@ const getAllUsers = async () => {
     log.error(`[database]: get all users error: ${error.message}`);
     return {
       success: false,
+      error,
     };
   }
 };
@@ -145,6 +147,27 @@ const authUser = async (username, password) => {
   }
 };
 
+const checkToken = async (username, token) => {
+  try {
+    const user = await User.findOne({ username: username });
+    if (user) {
+      return {
+        tokenOk: user.token === token,
+        userType: user.type,
+      };
+    }
+    else {
+      throw new Error(`no such user ${username}`);
+    }
+  }
+  catch (error) {
+    log.write(`[database]: check token error: ${error.message}`);
+    return {
+      tokenOk: false,
+    };
+  }
+};
+
 const addUser = async (newUser) => {
   try {
     const {
@@ -186,6 +209,7 @@ const addUser = async (newUser) => {
     log.error(`[database]: add user error: ${error.message}`);
     return {
       success: false,
+      error,
     };
   }
 };
@@ -206,6 +230,7 @@ const removeUser = async (username) => {
     log.error(`[database]: remove user error: ${error.message}`);
     return {
       success: false,
+      error,
     };
   }
 };
@@ -224,6 +249,10 @@ const editUser = async (username, editedUser) => {
   }
   catch (error) {
     log.error(`[database]: edit user error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
   }
 };
 
@@ -302,6 +331,7 @@ const getAllPosts = async () => {
     log.error(`[database]: get all posts error: ${error.message}`);
     return {
       success: false,
+      error,
     };
   }
 };
@@ -311,9 +341,6 @@ const addPost = async (newPost) => {
     const {
       title,
       author,
-      content,
-      category,
-      createdOn,
     } = newPost;
     const userExists = await User.findOne({ username: author });
     if (userExists) {
@@ -340,6 +367,7 @@ const addPost = async (newPost) => {
     log.error(`[database]: add post error: ${error.message}`);
     return {
       success: false,
+      error,
     };
   }
 };
@@ -360,6 +388,7 @@ const removePost = async (title) => {
     log.error(`[database]: remove post error: ${error.message}`);
     return {
       success: false,
+      error,
     };
   }
 };
@@ -378,6 +407,10 @@ const editPost = async (title, editedPost) => {
   }
   catch (error) {
     log.error(`[database]: edit post error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
   }
 };
 
@@ -418,6 +451,10 @@ const addComment = async (author, comment, title) => {
   }
   catch (error) {
     log.error(`[database]: add comment error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
   }
 };
 
@@ -433,7 +470,11 @@ const editComment = async (author, comment, title, commentTitle) => {
       };
       console.log(updateDocument);
       if (postExists) {
-        const result = await Post.updateOne( {title: title, 'comments.title': commentTitle}, updateDocument);
+        const result = await Post.updateOne({
+          title: title,
+          'comments.title': commentTitle,
+        },
+        updateDocument);
         if (result.matchedCount !== 0) {
           return {
             success: true,
@@ -453,251 +494,26 @@ const editComment = async (author, comment, title, commentTitle) => {
   }
   catch (error) {
     log.error(`[database]: edit comment error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
   }
 };
 
-//#endregion
-
-//#region Users
-
-// const addUser = async (name, password, type) => {
-//   try {
-//     const userExists = await User.findOne({ username: name });
-//     if (!userExists) {
-//       const saltRounds = 10;
-//       const hash = await bcrypt.hash(password, saltRounds);
-//       if (!hash) {
-//         throw new Error('could not create hash');
-//       }
-//       else {
-//         const user = new User({
-//           username: name,
-//           password: hash,
-//           type,
-//           token: '',
-//         });
-
-//         user.save().catch((error) => { throw new Error(error); });
-//         return {
-//           success: true,
-//         };
-//       }
-//     }
-//     else {
-//       throw new Error('username already exists');
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: add user error: ${error.message}`);
-//   }
-// };
-
-// const authUser = async (name, password) => {
-//   try {
-//     const user = await User.findOne({ username: name });
-//     if (user) {
-//       const getToken = () => {
-//         const alphabet = '1234567890abcdefghijklmnopqrstuvwxyz!@#$%^&*(){}][<>,.~';
-//         const nanoid = customAlphabet(alphabet, alphabet.length);
-//         return nanoid();
-//       };
-
-//       const result = await bcrypt.compare(password, user.password);
-
-//       if (result) {
-//         const authToken = getToken();
-//         user.token = authToken;
-//         await user.save();
-//         return {
-//           success: true,
-//           token: user.token,
-//           type: user.type,
-//         };
-//       }
-//       else {
-//         throw new Error(`password for ${name} does not match ${password}`);
-//       }
-//     }
-//     else {
-//       throw new Error(`user ${name} does not exist`);
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: user authentification error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
-
-// const getUser = async (name) => {
-//   try {
-//     const user = await User.findOne({ name });
-//     return user;
-//   }
-//   catch (error) {
-//     log.error(`[database]: get user error: ${error.message}`);
-//     return false;
-//   }
-// }
-
-// const getAllUsers = async () => {
-//   try {
-//     const users = await User.find({});
-//     return {
-//       success: true,
-//       users,
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: get all users error: ${error.message}`);
-//     return {
-//       sucess: false,
-//       error,
-//     }
-//   }
-// }
-
-// const editUser = async (name, newUserData) => {
-//   try {
-//     const user = await User.findOne({ name });
-//     if (user) {
-//       const result = await User.updateOne({ name }, newUserData);
-//       return {
-//         success: result.nModified === 1,
-//       };
-//     }
-//     else {
-//       throw new Error('no such user');
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: edit user error ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
-
-// const removeUser = async (name) => {
-//   try {
-//     const result = await User.deleteOne({ name });
-//     return {
-//       success: result && true,
-//     };
-//   }
-//   catch (error) {
-//     log.error(`[database]: remove user error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
-
-// //#endregion
-
-// //#region Posts
-
-// const addPost = async (post) => {
-//   try {
-//     const {
-//       content,
-//       title,
-//       author,
-//       category,
-//     } = post;
-//     const blogPost = new Post({
-//       content,
-//       title,
-//       author,
-//       category,
-//       timeStamp: new Date(Date.now()),
-//       comments: [],
-//     });
-//     blogPost.save().catch((error) => {
-//       throw new Error(error);
-//     });
-//     return {
-//       success: true,
-//     };
-//   }
-//   catch (error) {
-//     log.error(`[database]: error adding blog post: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
-
-// const editPost = async (title, newPost) => {
-//   try {
-//     const post = await Post.findOne({ title });
-//     if (post) {
-//       const result = await Post.updateOne({ title }, newPost);
-//       return {
-//         success: result.nModified === 1,
-//       };
-//     }
-//     else {
-//       throw new Error('no such post');
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: edit post error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
-
-// const removePost = async (title) => {
-//   try {
-//     const result = await Post.deleteOne({ title });
-//     return {
-//       success: result && true,
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: remove post error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
-
-// const getPost = async (title) => {
-//   try {
-//     const post = await Post.findOne({ title });
-//     return post;
-//   }
-//   catch(error) {
-//     log.error(`[database]: get one post error: ${error.message}`);
-//     return false;
-//   }
-// }
-
-// const getAllPosts = async () => {
-//   try {
-//     const posts = await Post.find({});
-//     return {
-//       success: true,
-//       data: posts,
-//     };
-//   }
-//   catch (error) {
-//     log.error(`[database]: get posts error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     }
-//   }
-// }
+const removeComment = async (title, commentTitle) => {
+  try {
+    const result = await Post.updateOne({title: title }, { $pull: { 'comments.$[].title': {title: commentTitle} }});
+    console.log(result);
+  }
+  catch (error) {
+    log.error(`[database]: remove comment error: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
 
 //#endregion
 
@@ -706,6 +522,7 @@ module.exports = {
   createUserCollection,
   getAllUsers,
   authUser,
+  checkToken,
   addUser,
   removeUser,
   editUser,
@@ -716,13 +533,5 @@ module.exports = {
   editPost,
   addComment,
   editComment,
-  // authUser,
-  // getUser,
-  // editUser,
-  // removeUser,
-  // addPost,
-  // editPost,
-  // removePost,
-  // getPost,
-  // getAllPosts,
+  removeComment,
 };

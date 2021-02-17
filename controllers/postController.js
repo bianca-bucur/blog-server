@@ -5,17 +5,16 @@ const {
   addPost,
   editPost,
   removePost,
-  getPost,
   getAllPosts,
 } = require('../modules/database');
 
 const postController = express.Router();
 
 postController.post('/add', async (req, res) => {
-  let result = {};
+  const result = {};
   try {
     const {
-      body
+      body,
     } = req;
 
     if (!body) {
@@ -23,7 +22,7 @@ postController.post('/add', async (req, res) => {
     }
     else {
       const {
-        post
+        post,
       } = body;
       console.log(post);
       const result = await addPost(post);
@@ -36,7 +35,7 @@ postController.post('/add', async (req, res) => {
       }
     }
   }
-  catch(error) {
+  catch (error) {
     log.error(`[post]: POST /addPost -> ${error.message}`);
     res.send({ success: false });
   }
@@ -47,7 +46,7 @@ postController.post('/editPost', async (req, res) => {
 
   try {
     const {
-      body
+      body,
     } = req;
 
     if (!body) {
