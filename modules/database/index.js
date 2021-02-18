@@ -214,7 +214,7 @@ const addUser = async (newUser) => {
   }
 };
 
-const removeUser = async (username) => {
+const deleteUser = async (username) => {
   try {
     const result = await User.deleteOne({ username });
     if (result.deletedCount === 1) {
@@ -251,6 +251,34 @@ const editUser = async (username, editedUser) => {
     log.error(`[database]: edit user error: ${error.message}`);
     return {
       success: false,
+      error,
+    };
+  }
+};
+
+const checkPass = async (username, password) => {
+  try {
+    const user = await User.findOne({ username: username });
+
+    if (user) {
+      const passOk = await bcrypt.compare(password, user.password);
+      if (passOk) {
+        return {
+          success: true,
+        };
+      }
+      else {
+        throw new Error('incorrect password');
+      }
+    }
+    else {
+      throw new Error(`no such user: ${username}`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: check password error: ${error}`);
+    return {
+      sucess: false,
       error,
     };
   }
@@ -372,7 +400,7 @@ const addPost = async (newPost) => {
   }
 };
 
-const removePost = async (title) => {
+const deletePost = async (title) => {
   try {
     const result = await Post.deleteOne(title);
     if (result.deletedCount === 1) {
@@ -458,38 +486,32 @@ const addComment = async (author, comment, title) => {
   }
 };
 
-const editComment = async (author, comment, title, commentTitle) => {
+const editComment = async (comment, title, commentTitle) => {
   try {
-    const userExists = await User.findOne({ username: author });
-    if (userExists) {
-      const postExists = await Post.findOne({title: title});
-      const updateDocument = {
-        $set: {
-          'comments.$[]': comment,
-        },
-      };
-      console.log(updateDocument);
-      if (postExists) {
-        const result = await Post.updateOne({
-          title: title,
-          'comments.title': commentTitle,
-        },
-        updateDocument);
-        if (result.matchedCount !== 0) {
-          return {
-            success: true,
-          };
-        }
-        else {
-          throw new Error('no such post');
-        }
+    const postExists = await Post.findOne({title: title});
+    const updateDocument = {
+      $set: {
+        'comments.$[]': comment,
+      },
+    };
+    console.log(updateDocument);
+    if (postExists) {
+      const result = await Post.updateOne({
+        title: title,
+        'comments.title': commentTitle,
+      },
+      updateDocument);
+      if (result.matchedCount !== 0) {
+        return {
+          success: true,
+        };
       }
       else {
-        throw new Error(`no post with title '${title}'`);
+        throw new Error('no such post');
       }
     }
     else {
-      throw new Error(`no user with name '${author}' exists`);
+      throw new Error(`no post with title '${title}'`);
     }
   }
   catch (error) {
@@ -524,12 +546,13 @@ module.exports = {
   authUser,
   checkToken,
   addUser,
-  removeUser,
+  deleteUser,
   editUser,
+  checkPass,
   createPostCollection,
   addPost,
   getAllPosts,
-  removePost,
+  deletePost,
   editPost,
   addComment,
   editComment,

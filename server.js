@@ -16,7 +16,7 @@ const {
   addUser,
   addPost,
   getAllPosts,
-  removePost,
+  deletePost,
   addComment,
   editPost,
   authUser,
