@@ -21,7 +21,7 @@ const {
   editPost,
   authUser,
   editComment,
-  removeComment,
+  deleteComment,
 } = require('./modules/database');
 const config = require('./config');
 
@@ -132,7 +132,7 @@ const main = async () => {
     'test title10',
     'test comment5',
   );
-  await removeComment('test title10', 'test comment5');
+  await deleteComment('test title10', 'test comment5');
   const users = await getAllUsers();
   const posts = await getAllPosts();
   if (users.data) {

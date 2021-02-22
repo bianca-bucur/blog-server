@@ -79,5 +79,7 @@ controllers.use(async (req, res, next) => {
 });
 
 controllers.use('/post', require('./postController'));
+controllers.use('/comment', require('./commentController'));
+controllers.use('/user', require('./userController'));
 
 module.exports = controllers;

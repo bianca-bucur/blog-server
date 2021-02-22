@@ -523,7 +523,7 @@ const editComment = async (comment, title, commentTitle) => {
   }
 };
 
-const removeComment = async (title, commentTitle) => {
+const deleteComment = async (title, commentTitle) => {
   try {
     const result = await Post.updateOne({title: title }, { $pull: { 'comments.$[].title': {title: commentTitle} }});
     console.log(result);
@@ -556,5 +556,5 @@ module.exports = {
   editPost,
   addComment,
   editComment,
-  removeComment,
+  deleteComment,
 };
