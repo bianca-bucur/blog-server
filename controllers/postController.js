@@ -11,6 +11,7 @@ const {
 const postController = express.Router();
 
 postController.post('/add', async (req, res) => {
+  const result = {};
   try {
     const {
       body,
@@ -39,7 +40,7 @@ postController.post('/add', async (req, res) => {
     }
   }
   catch (error) {
-    log.error(`[post]: POST /add ->  ${error.message}`);
+    log.error(`[post]: POST /addPost -> ${error.message}`);
     res.send({ success: false });
   }
 });

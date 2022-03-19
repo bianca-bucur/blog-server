@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const controllers = require('./controllers');
 const log = require('./utils/log');
+const config = require('./config');
 const http = require('http');
 const {
   startWSServer,
@@ -14,16 +15,9 @@ const {
   createUserCollection,
   createPostCollection,
   addUser,
-  addPost,
-  getAllPosts,
-  deletePost,
-  addComment,
-  editPost,
   authUser,
-  editComment,
-  deleteComment,
+  editUser,
 } = require('./modules/database');
-const config = require('./config');
 
 const {
   nodeServer: {
@@ -61,86 +55,16 @@ const main = async () => {
     type: 'admin',
     createdOn: new Date(Date.now()),
   });
-  await addPost({
-    title:'test title1',
-    author: 'user2',
-    content:'test content',
-    category: 'test',
-    createdOn: new Date(Date.now()),
-    comments: [{
-      name: 'Jane Doe',
-      username: 'user2',
-      type: 'admin',
-      title: 'test comment31',
-      content: 'test comment content fdsjoifsdijfdssdfiajsdi',
-      createdOn: new Date(Date.now()),
-    }],
-  });
-  await addPost({
-    title:'test title2',
-    author: 'user2',
-    content:'test content',
-    category: 'test',
-    createdOn: new Date(Date.now()),
-    comments: [{
-      name: 'Jane Doe',
-      username: 'user2',
-      type: 'admin',
-      title: 'test comment1',
-      content: 'test comment content',
-      createdOn: new Date(Date.now()),
-    }],
-  });
-  await addPost({
-    title:'test title10',
-    author: 'user2',
-    content:'test content',
-    category: 'test',
-    createdOn: new Date(Date.now()),
-  });
-  await addComment('user2',
+  await getAllUsers();
+  // await authUser('user', 'pass2');
+  await editUser('user2',
     {
       name: 'Jane Doe',
       username: 'user2',
-      type: 'admin',
-      title: 'test comment5',
-      content: 'test comment content4',
-      createdOn: new Date(Date.now()),
-    },
-    'test title10',
-  );
-  await addComment('user2',
-    {
-      name: 'Jane Doe',
-      username: 'user2',
-      type: 'admin',
-      title: 'test comment1',
-      content: 'test comment content4fdsafdsasa',
-      createdOn: new Date(Date.now()),
-    },
-    'test title10',
-  );
-  await editComment('user2',
-    {
-      name: 'Jane Doe',
-      username: 'user2',
-      type: 'admin',
-      title: 'test comment5',
-      content: 'test comment content4 fdsjaofoisdaojiassadojfsadoj',
-      createdOn: new Date(Date.now()),
-    },
-    'test title10',
-    'test comment5',
-  );
-  await deleteComment('test title10', 'test comment5');
-  const users = await getAllUsers();
-  const posts = await getAllPosts();
-  if (users.data) {
-    console.log(users.data);
-  }
-  if (posts.data) {
-    console.log(posts.data);
-  }
+      password: 'pass2',
+      // type: 'admin',
+      // createdOn: new Date(Date.now()),
+    });
 };
 
 main();

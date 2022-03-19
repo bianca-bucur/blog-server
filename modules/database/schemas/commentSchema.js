@@ -1,23 +1,14 @@
-const postSchema = {
+const commentSchema = {
   $jsonSchema: {
     bsonType: 'object',
-    required: ['title', 'author', 'category', 'content', 'createdOn'],
+    required: ['author', 'content', 'createdOn'],
     properties: {
-      title: {
-        bsonType: 'string',
-        description: 'string and required',
-      },
       author: {
-        bsonType: 'string',
-        description: 'string and required',
-      },
-      category: {
         bsonType: 'string',
         description: 'string and required',
       },
       content: {
         bsonType: 'string',
-        minLength: 500,
         description: 'string and required',
       },
       createdOn: {
@@ -32,4 +23,4 @@ const postSchema = {
   },
 };
 
-module.exports = postSchema;
+module.exports = commentSchema;

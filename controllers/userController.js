@@ -37,7 +37,7 @@ userController.post('/add', async (req, res) => {
     } = req;
 
     if (!body) {
-      throw new Error('empty body');
+      throw new Error('[user]: POST /add -> empty body');
     }
     else {
       const {
@@ -64,78 +64,7 @@ userController.post('/add', async (req, res) => {
     }
   }
   catch (error) {
-    log.error(`[user]: POST /add -> ${error.message}`);
-    res.send({ success: false });
-  }
-});
-
-userController.post('/edit', async (req, res) => {
-  try {
-    const {
-      body,
-    } = req;
-
-    if (!body) {
-      throw new Error('empty body');
-    }
-    else {
-      const {
-        username,
-        userData,
-      } = body;
-
-      if (!username || !userData) {
-        throw new Error(`bad body: ${JSON.stringify(body)}`);
-      }
-      else {
-        const result = await editUser(username, userData);
-
-        if (!result.success) {
-          throw new Error(`error: ${result.error.message}`);
-        }
-        else {
-          res.send({ success: true });
-        }
-      }
-    }
-  }
-  catch (error) {
-    log.error(`[user]: POST /edit -> ${error.message}`);
-    res.send({ success: false });
-  }
-});
-
-userController.delete('/delete', async (req, res) => {
-  try {
-    const {
-      body,
-    } = req;
-
-    if (!body) {
-      throw new Error('empty body');
-    }
-    else {
-      const {
-        username,
-      } = body;
-
-      if (!username) {
-        throw new Error(`bad body: ${JSON.stringify(body)}`);
-      }
-      else {
-        const result = await deleteUser({ username: username });
-
-        if (!result.success) {
-          throw new Error(`error: ${result.error.message}`);
-        }
-        else {
-          res.send({ success: result.success });
-        }
-      }
-    }
-  }
-  catch (error) {
-    log.error(`[user]: DELETE /delete -> ${error.message}`);
+    log.error(error.message);
     res.send({ success: false });
   }
 });

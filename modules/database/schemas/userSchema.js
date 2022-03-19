@@ -1,7 +1,7 @@
 const userSchema = {
   $jsonSchema: {
     bsonType: 'object',
-    required: ['name', 'username', 'password', 'type', 'createdOn'],
+    required: ['name', 'username', 'password', 'type', 'createdOn', 'lastLogin'],
     properties: {
       name: {
         bsonType: 'string',
@@ -23,8 +23,25 @@ const userSchema = {
         bsonType: 'date',
         description: 'date and required',
       },
+      lastLogin: {
+        bsonType: 'date',
+        description: 'date and required',
+      },
       token: {
         bsonType: 'string',
+        description: 'string',
+      },
+      posts: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'objectId',
+        },
+      },
+      comments: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'objectId',
+        },
       },
     },
   },
