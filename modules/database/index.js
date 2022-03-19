@@ -1,15 +1,18 @@
 const {MongoClient} = require('mongodb');
 const bcrypt = require('bcrypt');
-const log = require('../../utils/log');
 const { customAlphabet } = require('nanoid');
 
 const userSchema = require('./schemas/userSchema');
-// const User = require('./models/users');
-// const Post = require('./models/blogPost');
+const postSchema = require('./schemas/postSchema');
+const commentSchema = require('./schemas/commentSchema');
+
+const log = require('../../utils/log');
+const { asyncForEach } = require('../../utils');
 
 let db = null;
 let User = null;
-const Post = null;
+let Post = null;
+let Comment = null;
 
 const client = new MongoClient('mongodb://localhost/blog', {
   useUnifiedTopology: true,
@@ -20,7 +23,9 @@ const connectToDB = async () => {
     await client.connect();
     db = client.db('blog');
     User = db.collection('users');
-    console.log('connected to db');
+    Post = db.collection('posts');
+    Comment = db.collection('comments');
+    log.write('connected to db');
     return true;
   }
   catch (error) {
@@ -33,16 +38,20 @@ const connectToDB = async () => {
 
 const createUserCollection = async () => {
   try {
-    const collectionExists = await db.getCollection('users').exists();
-    console.log('collection:', collectionExists);
-    // if (!collectionExists) {
-    //   await db.createCollection('users', {
-    //     validator: userSchema,
-    //   });
-    // }
+    const collectionExists = await db.listCollections()
+      .toArray()
+      .includes('users');
+    if (!collectionExists) {
+      await db.createCollection('users', {
+        validator: userSchema,
+      });
+    }
+    else {
+      throw new Error('collection already exists');
+    }
   }
   catch (error) {
-    log.error('[database]: could not create user collection');
+    log.error(`[database]: could not create user collection: ${error.message}`);
   }
 };
 
@@ -61,7 +70,7 @@ const addUser = async (newUser) => {
       console.log(password);
       const hash = await bcrypt.hash(password, saltRounds);
       if (!hash) {
-        throw new Error('[database]: could not create hash');
+        throw new Error('could not create hash');
       }
       else {
         const user = {
@@ -76,7 +85,7 @@ const addUser = async (newUser) => {
         const result = await User.insertOne(user);
 
         if (result.insertedCount < 1) {
-          throw new Error('[database]: could not insert new user');
+          throw new Error('could not insert new user');
         }
         return {
           success: true,
@@ -85,280 +94,353 @@ const addUser = async (newUser) => {
     }
   }
   catch (error) {
-    log.error(`[database]: add user error: ${error.message}`);
+    log.error(`[database]: add user error: ${ error.message }`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const getUser = async (name) => {
+  try {
+    const user = await User.findOne({ username: name });
+
+    return {
+      success: true,
+      user,
+    };
+  }
+  catch (error) {
+    log.error(`[database]: get user error: ${ error.message }`);
+    return {
+      success: false,
+    };
   }
 };
 
 const getAllUsers = async () => {
-  const users = User.find({});
-  if ((await users.count() === 0)) {
-    console.log('no users');
+  try {
+    const users = User.find({});
+
+    return {
+      success: true,
+      users,
+    };
   }
-  else {
-    users.forEach(user => {
-      console.log(user);
-    });
+  catch (error) {
+    log.error(`[database]: get all users error: ${ error.message }`);
+    return {
+      success: false,
+      error,
+    };
   }
 };
 
+const authUser = async (name, password) => { 
+  try {
+    const user =await User.findOne({ username: name });
+    if (user) {
+      const getToken = () => {
+        const alphabet = '1234567890abcdefghijklmnopqrstuvwxyz!@#$%^&*(){}][<>,.~';
+        const nanoid = customAlphabet(alphabet, alphabet.length);
+        return nanoid();
+      };
+
+      const result = await bcrypt.compare(password, user.password);
+
+      if (result) {
+        const authToken = getToken();
+        user.token = authToken;
+        await User.updateOne({ username: name }, {$set: user});
+
+        return {
+          success: true,
+          token: user.token,
+          type: user.type,
+        };
+      }
+      else {
+        throw new Error(`password for ${ name } does not match ${ password }`);
+      }
+    }
+    else {
+      throw new Error(`user with username ${name} does not exist`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: authentificate user error: ${ error.message }`);
+    return {
+      sucess: false,
+      error,
+    };
+  }
+};
+
+const editUser = async (name, newUserData) => {
+  try {
+    const result = await User.updateOne(
+      { username: name },
+      {
+        $set:
+          {
+            ...newUserData,
+          },
+      },
+    );
+    
+    if (result.matchedCount === 1) {
+      return {
+        success: result.modifiedCount === 1,
+      };
+    }
+    else {
+      throw new Error(`no user with username ${ name }`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: edit user error ${ error.message }`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
+
+const removeUser = async (name) => {
+  try {
+    const result = await User.deleteOne({ username: name });
+    if (result.deleteCount === 1) {
+      return {
+        success: true,
+      };
+    }
+    else {
+      throw new Error(`no user with username ${ name }`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: remove user error: ${ error.message }`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
+
+const getPostsByUser = async (username) => {
+  try {
+    const postIds = await User.findOne({ username: username }).posts.toArray();
+
+    const posts = [];
+
+    await asyncForEach(postIds, async (postId) => {
+      const post = await Post.findOne({ _id: postId });
+      posts.push(post);
+    });
+
+    return {
+      success: true,
+      posts,
+    };
+  }
+  catch (error) {
+    log.error(`[database]: get posts by user error: ${ error.message }`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const getCommentsByUser = async (username) => {
+  try {
+    const commentIds = await User.findOne({ username: username }).comments.toArray();
+
+    const comments = [];
+
+    await asyncForEach(commentIds, async (commentId) => {
+      const comment = Comment.findOne({ _id: commentId });
+      comments.push(comment);
+    });
+
+    return {
+      success: true,
+      comments,
+    };
+  }
+  catch (error) {
+    log.error(`[database]: get comments by user error: ${ error.message }`);
+    return {
+      success: false,
+    };
+  }
+};
 
 //#endregion
 
-//#region Users
+//#region Posts
 
-// const addUser = async (name, password, type) => {
-//   try {
-//     const userExists = await User.findOne({ username: name });
-//     if (!userExists) {
-//       const saltRounds = 10;
-//       const hash = await bcrypt.hash(password, saltRounds);
-//       if (!hash) {
-//         throw new Error('could not create hash');
-//       }
-//       else {
-//         const user = new User({
-//           username: name,
-//           password: hash,
-//           type,
-//           token: '',
-//         });
+const createPostCollection = async () => {
+  try {
+    const collectionExists = await db.listCollections()
+      .toArray()
+      .includes('posts');
+    if (!collectionExists) {
+      await db.createCollection('posts', {
+        validator: postSchema,
+      });
+    }
+  }
+  catch (error) {
+    log.error(`[database]: could not create posts collection: ${ error.message }`);
+  }
+};
 
-//         user.save().catch((error) => { throw new Error(error); });
-//         return {
-//           success: true,
-//         };
-//       }
-//     }
-//     else {
-//       throw new Error('username already exists');
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: add user error: ${error.message}`);
-//   }
-// };
+const addPost = async (post) => {
+  try {
+    const result = await Post.insertOne(post);
 
-// const authUser = async (name, password) => {
-//   try {
-//     const user = await User.findOne({ username: name });
-//     if (user) {
-//       const getToken = () => {
-//         const alphabet = '1234567890abcdefghijklmnopqrstuvwxyz!@#$%^&*(){}][<>,.~';
-//         const nanoid = customAlphabet(alphabet, alphabet.length);
-//         return nanoid();
-//       };
+    if (result.insertedCount < 1) {
+      throw new Error();
+    }
+  }
+  catch (error) {
+    log.error(`[database]: error adding blog post: ${error.message}`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
 
-//       const result = await bcrypt.compare(password, user.password);
+const getPost = async(postId) => {
+  try {
+    const post = await Post.findOne({ _id: postId });
 
-//       if (result) {
-//         const authToken = getToken();
-//         user.token = authToken;
-//         await user.save();
-//         return {
-//           success: true,
-//           token: user.token,
-//           type: user.type,
-//         };
-//       }
-//       else {
-//         throw new Error(`password for ${name} does not match ${password}`);
-//       }
-//     }
-//     else {
-//       throw new Error(`user ${name} does not exist`);
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: user authentification error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
+    return {
+      success: true,
+      post,
+    };
+  }
+  catch (error) {
+    log.error(`[database]: get post error: ${ error.message }`);
+    return {
+      success: false,
+    };
+  }
+};
 
-// const getUser = async (name) => {
-//   try {
-//     const user = await User.findOne({ name });
-//     return user;
-//   }
-//   catch (error) {
-//     log.error(`[database]: get user error: ${error.message}`);
-//     return false;
-//   }
-// }
+const getAllPosts = async () => {
+  try {
+    const posts = await Post.find({});
 
-// const getAllUsers = async () => {
-//   try {
-//     const users = await User.find({});
-//     return {
-//       success: true,
-//       users,
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: get all users error: ${error.message}`);
-//     return {
-//       sucess: false,
-//       error,
-//     }
-//   }
-// }
+    return {
+      success: true,
+      posts,
+    };
+  }
+  catch (error) {
+    log.error(`[database]: get all posts error: ${ error.message }`);
+    return {
+      success: false,
+    };
+  }
+};
 
-// const editUser = async (name, newUserData) => {
-//   try {
-//     const user = await User.findOne({ name });
-//     if (user) {
-//       const result = await User.updateOne({ name }, newUserData);
-//       return {
-//         success: result.nModified === 1,
-//       };
-//     }
-//     else {
-//       throw new Error('no such user');
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: edit user error ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
+const editPost = async (postId, newPostData) => {
+  try {
+    const result = await Post.updateOne(
+      { _id: postId },
+      {
+        $set: {
+          ...newPostData,
+        },
+      },
+    );
 
-// const removeUser = async (name) => {
-//   try {
-//     const result = await User.deleteOne({ name });
-//     return {
-//       success: result && true,
-//     };
-//   }
-//   catch (error) {
-//     log.error(`[database]: remove user error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
+    if (result.matchedCount === 1) {
+      return {
+        success: result.modifiedCount ===1,
+      };
+    }
+    else {
+      throw new Error(`no post with id ${ postId }`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: edit post error: ${ error.message }`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
 
-// //#endregion
+const removePost = async (postId) => {
+  try {
+    const result = await Post.deleteOne({ _id: postId });
+    if (result.deleteCount === 1) {
+      return {
+        success: true,
+      };
+    }
+    else {
+      throw new Error(`no post with postId ${ postId }`);
+    }
+  }
+  catch (error) {
+    log.error(`[database]: remove post error: ${ error.message }`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
 
-// //#region Posts
+//#endregion
 
-// const addPost = async (post) => {
-//   try {
-//     const {
-//       content,
-//       title,
-//       author,
-//       category,
-//     } = post;
-//     const blogPost = new Post({
-//       content,
-//       title,
-//       author,
-//       category,
-//       timeStamp: new Date(Date.now()),
-//       comments: [],
-//     });
-//     blogPost.save().catch((error) => {
-//       throw new Error(error);
-//     });
-//     return {
-//       success: true,
-//     };
-//   }
-//   catch (error) {
-//     log.error(`[database]: error adding blog post: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
+//#region Comments
 
-// const editPost = async (title, newPost) => {
-//   try {
-//     const post = await Post.findOne({ title });
-//     if (post) {
-//       const result = await Post.updateOne({ title }, newPost);
-//       return {
-//         success: result.nModified === 1,
-//       };
-//     }
-//     else {
-//       throw new Error('no such post');
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: edit post error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
-
-// const removePost = async (title) => {
-//   try {
-//     const result = await Post.deleteOne({ title });
-//     return {
-//       success: result && true,
-//     }
-//   }
-//   catch (error) {
-//     log.error(`[database]: remove post error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     };
-//   }
-// };
-
-// const getPost = async (title) => {
-//   try {
-//     const post = await Post.findOne({ title });
-//     return post;
-//   }
-//   catch(error) {
-//     log.error(`[database]: get one post error: ${error.message}`);
-//     return false;
-//   }
-// }
-
-// const getAllPosts = async () => {
-//   try {
-//     const posts = await Post.find({});
-//     return {
-//       success: true,
-//       data: posts,
-//     };
-//   }
-//   catch (error) {
-//     log.error(`[database]: get posts error: ${error.message}`);
-//     return {
-//       success: false,
-//       error,
-//     }
-//   }
-// }
+const createCommentsCollection = async () => {
+  try {
+    const collectionExists = db.listCollections()
+      .toArray()
+      .includes('comments');
+    
+    if (!collectionExists) {
+      await db.createCollection('comments', {
+        validator: commentSchema,
+      });
+    }
+    else {
+      throw new Error('collection already exists');
+    }
+  }
+  catch (error) {
+    log.error(`[database]: could not create comments collection: ${ error.message }`);
+  }
+};
 
 //#endregion
 
 module.exports = {
   connectToDB,
+
   createUserCollection,
   getAllUsers,
+  getUser,
   addUser,
-  // authUser,
-  // getUser,
-  // editUser,
-  // removeUser,
-  // addPost,
-  // editPost,
-  // removePost,
-  // getPost,
-  // getAllPosts,
+  authUser,
+  editUser,
+  removeUser,
+  getPostsByUser,
+  getCommentsByUser,
+
+  createPostCollection,
+  addPost,
+  getPost,
+  getAllPosts,
+  editPost,
+  removePost,
+
+  createCommentsCollection,
 };

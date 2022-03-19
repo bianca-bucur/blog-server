@@ -1,4 +1,4 @@
-const enviromnet = 'dev';
+const environment = 'dev';
 
 const config = {
   nodeServer: {

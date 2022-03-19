@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const cofing = require('./config');
 const bodyParser = require('body-parser');
 const controllers = require('./controllers');
 const log = require('./utils/log');
+const config = require('./config');
 const http = require('http');
 const {
   startWSServer,
@@ -14,8 +14,9 @@ const {
   getAllUsers,
   createUserCollection,
   addUser,
+  authUser,
+  editUser,
 } = require('./modules/database');
-const config = require('./config');
 
 const {
   nodeServer: {
@@ -53,6 +54,15 @@ const main = async () => {
     createdOn: new Date(Date.now()),
   });
   await getAllUsers();
+  // await authUser('user', 'pass2');
+  await editUser('user2',
+    {
+      name: 'Jane Doe',
+      username: 'user2',
+      password: 'pass2',
+      // type: 'admin',
+      // createdOn: new Date(Date.now()),
+    });
 };
 
 main();

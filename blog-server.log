@@ -18,3 +18,18 @@
 [2021-02-03T12:52:25.613] [ERROR] main -  [ERROR] [database]: could not create user collection
 [2021-02-03T12:54:23.618] [ERROR] main -  [ERROR] [database]: could not create user collection
 [2021-02-03T12:55:45.415] [ERROR] main -  [ERROR] [database]: add user error: Document failed validation
+[2022-03-14T19:15:47.078] [ERROR] main -  [ERROR] [database]: authentificate user error: data and hash arguments required
+[2022-03-14T19:16:31.933] [ERROR] main -  [ERROR] [database]: authentificate user error: data and hash arguments required
+[2022-03-14T19:17:29.460] [ERROR] main -  [ERROR] [database]: authentificate user error: data and hash arguments required
+[2022-03-14T19:17:38.734] [ERROR] main -  [ERROR] [database]: authentificate user error: Update document requires atomic operators
+[2022-03-14T19:19:22.447] [ERROR] main -  [ERROR] [database]: authentificate user error: user with username user does not exist
+[2022-03-14T19:19:37.270] [ERROR] main -  [ERROR] [database]: authentificate user error: user with username user does not exist
+[2022-03-14T19:38:46.438] [ERROR] main -  [ERROR] [database]: authentificate user error: user with username user does not exist
+[2022-03-14T19:38:51.338] [ERROR] main -  [ERROR] [database]: authentificate user error: user with username user does not exist
+[2022-03-14T19:39:08.822] [ERROR] main -  [ERROR] [database]: authentificate user error: user with username user does not exist
+[2022-03-14T19:39:52.443] [ERROR] main -  [ERROR] [database]: authentificate user error: user with username user does not exist
+[2022-03-14T19:39:58.801] [ERROR] main -  [ERROR] [database]: authentificate user error: user with username user does not exist
+[2022-03-14T19:40:05.778] [ERROR] main -  [ERROR] [database]: authentificate user error: user with username user does not exist
+[2022-03-14T19:41:28.127] [ERROR] main -  [ERROR] [database]: could not create user collection
+[2022-03-14T19:43:07.205] [ERROR] main -  [ERROR] [database]: edit user error no user with username user
+[2022-03-14T19:43:17.672] [ERROR] main -  [ERROR] [database]: edit user error no user with username user

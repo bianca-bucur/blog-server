@@ -1,7 +1,7 @@
-const postSchema = {
+const userSchema = {
   $jsonSchema: {
     bsonType: 'object',
-    required: ['name', 'username', 'password', 'type', 'createdOn'],
+    required: ['name', 'username', 'password', 'type', 'createdOn', 'lastLogin'],
     properties: {
       name: {
         bsonType: 'string',
@@ -23,11 +23,28 @@ const postSchema = {
         bsonType: 'date',
         description: 'date and required',
       },
+      lastLogin: {
+        bsonType: 'date',
+        description: 'date and required',
+      },
       token: {
         bsonType: 'string',
+        description: 'string',
+      },
+      posts: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'objectId',
+        },
+      },
+      comments: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'objectId',
+        },
       },
     },
   },
 };
 
-module.exports = postSchema;
+module.exports = userSchema;

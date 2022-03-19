@@ -18,7 +18,7 @@ userController.post('/add', async (req, res) => {
     } = req;
 
     if (!body) {
-      throw new Error(`[user]: POST /add -> empty body`);
+      throw new Error('[user]: POST /add -> empty body');
     }
     else {
       const {
@@ -41,7 +41,7 @@ userController.post('/add', async (req, res) => {
       }
     }
   }
-  catch(error) {
+  catch (error) {
     log.error(error.message);
     res.send({ success: false });
   }
