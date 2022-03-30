@@ -67,7 +67,6 @@ const addUser = async (newUser) => {
     const userExists = await User.findOne({ username });
     if (!userExists) {
       const saltRounds = 10;
-      console.log(password);
       const hash = await bcrypt.hash(password, saltRounds);
       if (!hash) {
         throw new Error('could not create hash');
@@ -101,9 +100,9 @@ const addUser = async (newUser) => {
   }
 };
 
-const getUser = async (name) => {
+const getUser = async (username) => {
   try {
-    const user = await User.findOne({ username: name });
+    const user = await User.findOne({ username: username });
 
     return {
       success: true,
@@ -136,9 +135,13 @@ const getAllUsers = async () => {
   }
 };
 
-const authUser = async (name, password) => { 
+const authUser = async (data) => { 
   try {
-    const user =await User.findOne({ username: name });
+    const {
+      username,
+      password,
+    } = data;
+    const user = await User.findOne({ username: username });
     if (user) {
       const getToken = () => {
         const alphabet = '1234567890abcdefghijklmnopqrstuvwxyz!@#$%^&*(){}][<>,.~';
@@ -151,7 +154,7 @@ const authUser = async (name, password) => {
       if (result) {
         const authToken = getToken();
         user.token = authToken;
-        await User.updateOne({ username: name }, {$set: user});
+        await User.updateOne({ username: username }, {$set: user});
 
         return {
           success: true,
@@ -160,26 +163,72 @@ const authUser = async (name, password) => {
         };
       }
       else {
-        throw new Error(`password for ${ name } does not match ${ password }`);
+        throw new Error(`password for ${ username } does not match ${ password }`);
       }
     }
     else {
-      throw new Error(`user with username ${name} does not exist`);
+      throw new Error( `user with username ${username} does not exist`);
     }
   }
   catch (error) {
-    log.error(`[database]: authentificate user error: ${ error.message }`);
+    log.error(`[database]: authenticate user error: ${ error.message }`);
     return {
-      sucess: false,
+      success: false,
       error,
     };
   }
 };
 
-const editUser = async (name, newUserData) => {
+const changePass = async (data) => {
   try {
+    const {
+      password,
+      newPassword,
+      username,
+    } = data;
+
+    const user = await User.findOne({ username: username });
+
+    if (user) {
+      const passOK = bcrypt.compare(password, user.password);
+
+      if (passOK) {
+        const saltRounds = 10;
+        const hash = await bcrypt.hash(password, saltRounds);
+        if (!hash) {
+          throw new Error('could not create hash');
+        }
+        else {
+          await User.updateOne({ username }, { $set: { password } });
+        }
+      }
+      else {
+        return {
+          success: true,
+          result: 'badPass',
+        };
+      }
+    }
+
+  }
+  catch (error) {
+    log.error(`[database]: change password error ${error.message}`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const editUser = async (data) => {
+  try {
+    console.log(data);
+    const {
+      username,
+      newUserData,
+    } = data;
+
     const result = await User.updateOne(
-      { username: name },
+      { username: username },
       {
         $set:
           {
@@ -187,14 +236,14 @@ const editUser = async (name, newUserData) => {
           },
       },
     );
-    
+    // console.log(result);
     if (result.matchedCount === 1) {
       return {
         success: result.modifiedCount === 1,
       };
     }
     else {
-      throw new Error(`no user with username ${ name }`);
+      throw new Error(`no user with username ${ username }`);
     }
   }
   catch (error) {
@@ -206,16 +255,16 @@ const editUser = async (name, newUserData) => {
   }
 };
 
-const removeUser = async (name) => {
+const removeUser = async (username) => {
   try {
-    const result = await User.deleteOne({ username: name });
+    const result = await User.deleteOne({ username: username });
     if (result.deleteCount === 1) {
       return {
         success: true,
       };
     }
     else {
-      throw new Error(`no user with username ${ name }`);
+      throw new Error(`no user with username ${ username }`);
     }
   }
   catch (error) {
@@ -269,6 +318,27 @@ const getCommentsByUser = async (username) => {
   }
   catch (error) {
     log.error(`[database]: get comments by user error: ${ error.message }`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const checkToken = async (data) => {
+  try {
+    const {
+      username,
+      token,
+    } = data;
+    const result = User.findOne({ username: username, token: token });
+
+    return {
+      success: true && result,
+    };
+
+  }
+  catch (error) {
+    log.error(`[database]: check token error: ${ error.message }`);
     return {
       success: false,
     };
@@ -346,8 +416,12 @@ const getAllPosts = async () => {
   }
 };
 
-const editPost = async (postId, newPostData) => {
+const editPost = async (data) => {
   try {
+    const {
+      postId,
+      newPostData,
+    } = data;
     const result = await Post.updateOne(
       { _id: postId },
       {
@@ -434,6 +508,7 @@ module.exports = {
   removeUser,
   getPostsByUser,
   getCommentsByUser,
+  checkToken,
 
   createPostCollection,
   addPost,
