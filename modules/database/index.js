@@ -12,7 +12,7 @@ const { env } = require('../../config');
 
 const { asyncForEach } = require('../../utils');
 
-let db = null;
+var db = null;
 let User = null;
 let Post = null;
 let Comment = null;
@@ -39,7 +39,55 @@ const connectToDB = async () => {
 
 //#region Users
 
-const createUserCollection = async () => {
+const newUserColl = async () => {
+  await db.createCollection('users', {
+    validator: userSchema,
+  });
+};
+
+const createUserCollection = () => {
+  try {
+    const shouldCreate = new Promise((resolve, reject) => {
+      db.listCollections({ name: 'users' })
+        .next((err, collInfo) => {
+          if (err) {
+            reject({
+              success: false,
+              err,
+            });
+          }
+          else if (!collInfo) {
+            resolve({
+              success: true,
+            });
+          }
+          else {
+            reject({
+              success: false,
+              err: 'collections exists',
+            });
+          }
+        });
+    });
+    shouldCreate.then((result) => {
+      if (result.success) {
+        setTimeout(newUserColl.bind(db, shouldCreate));
+      }
+    })
+      .catch((result) => {
+        log.error(`[database]: could not create user collection ${result.err}`);
+      });
+  }
+  catch (error) {
+    log.error(`[database]: could not create user collection ${error}`);
+    return {
+      success: false,
+      error,
+    };
+  }
+};
+
+const getAllUsers = async () => {
   try {
     const collectionExists = await db.listCollections()
       .toArray()
