@@ -11,7 +11,6 @@ const {
 const postController = express.Router();
 
 postController.post('/add', async (req, res) => {
-  const result = {};
   try {
     const {
       body,
@@ -121,8 +120,6 @@ postController.delete('/deletePost', async (req, res) => {
 postController.get('/all', async (req, res) => {
   try {
     const result = await getAllPosts();
-
-    console.log(result);
 
     if (!result.success) {
       throw new Error(`error ${result.error.message}`);

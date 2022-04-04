@@ -12,10 +12,9 @@ const process = require('process');
 const {
   connectToDB,
   getAllUsers,
-  createUserCollection,
-  createPostCollection,
+  // createUserCollection,
   addUser,
-  authUser,
+  // authUser,
   editUser,
 } = require('./modules/database');
 
@@ -46,25 +45,27 @@ const main = async () => {
   const httpServer = http.createServer(app);
   httpServer.listen(port, ip);
 
-  await createUserCollection();
-  await createPostCollection();
-  await addUser({
-    name: 'Jane Doe',
-    username: 'user2',
-    password: 'pass2',
-    type: 'admin',
-    createdOn: new Date(Date.now()),
-  });
+  // await createUserCollection();
+  // await addUser({
+  //   name: 'Jane Doe',
+  //   username: 'user1',
+  //   password: 'pass1',
+  //   type: 'admin',
+  //   createdOn: new Date(Date.now()),
+  // });
   await getAllUsers();
   // await authUser('user', 'pass2');
-  await editUser('user2',
-    {
-      name: 'Jane Doe',
-      username: 'user2',
-      password: 'pass2',
-      // type: 'admin',
-      // createdOn: new Date(Date.now()),
-    });
+  // await editUser(
+  //   {
+  //     username: 'user3',
+  //     newUserData:{
+  //       name: 'Jane Doe',
+  //       username: 'user2',
+  //       password: 'pass2',
+  //     // type: 'admin',
+  //     // createdOn: new Date(Date.now()),
+  //     },
+  //   });
 };
 
 main();

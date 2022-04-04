@@ -7,6 +7,9 @@ const postSchema = require('./schemas/postSchema');
 const commentSchema = require('./schemas/commentSchema');
 
 const log = require('../../utils/log');
+
+const { env } = require('../../config');
+
 const { asyncForEach } = require('../../utils');
 
 var db = null;
@@ -110,7 +113,6 @@ const addUser = async (newUser) => {
       name,
       password,
       type,
-      createdOn,
     } = newUser;
     const userExists = await User.findOne({ username });
     if (!userExists) {
@@ -120,6 +122,7 @@ const addUser = async (newUser) => {
         throw new Error('could not create hash');
       }
       else {
+        const createdOn = new Date(Date.now());
         const user = {
           name,
           username,
@@ -139,6 +142,9 @@ const addUser = async (newUser) => {
         };
       }
     }
+    else {
+      throw new Error(`user with username ${ username } already exists`);
+    }
   }
   catch (error) {
     log.error(`[database]: add user error: ${ error.message }`);
@@ -148,10 +154,21 @@ const addUser = async (newUser) => {
   }
 };
 
-const getUser = async (name) => {
+const getUser = async (username) => {
   try {
-    const user = await User.findOne({ username: name });
 
+    const user = await User
+      .findOne({
+        username: username,
+      }, {
+        projection: {
+          _id: 0,
+          username: 1,
+          name: 1,
+          type: 1,
+        },
+      });
+    
     return {
       success: true,
       user,
@@ -167,8 +184,14 @@ const getUser = async (name) => {
 
 const getAllUsers = async () => {
   try {
-    const users = User.find({});
-
+    const users = await User.find({}, {
+      projection: {
+        _id: 0,
+        username: 1,
+        name: 1,
+        type: 1,
+      },
+    }).toArray();
     return {
       success: true,
       users,
@@ -183,9 +206,13 @@ const getAllUsers = async () => {
   }
 };
 
-const authUser = async (name, password) => { 
+const authUser = async (data) => { 
   try {
-    const user =await User.findOne({ username: name });
+    const {
+      username,
+      password,
+    } = data;
+    const user = await User.findOne({ username: username });
     if (user) {
       const getToken = () => {
         const alphabet = '1234567890abcdefghijklmnopqrstuvwxyz!@#$%^&*(){}][<>,.~';
@@ -198,7 +225,7 @@ const authUser = async (name, password) => {
       if (result) {
         const authToken = getToken();
         user.token = authToken;
-        await User.updateOne({ username: name }, {$set: user});
+        await User.updateOne({ username: username }, {$set: user});
 
         return {
           success: true,
@@ -207,26 +234,80 @@ const authUser = async (name, password) => {
         };
       }
       else {
-        throw new Error(`password for ${ name } does not match ${ password }`);
+        throw new Error(`password for ${ username } does not match ${ password }`);
       }
     }
     else {
-      throw new Error(`user with username ${name} does not exist`);
+      throw new Error( `user with username ${username} does not exist`);
     }
   }
   catch (error) {
-    log.error(`[database]: authentificate user error: ${ error.message }`);
+    log.error(`[database]: authenticate user error: ${ error.message }`);
     return {
-      sucess: false,
+      success: false,
       error,
     };
   }
 };
 
-const editUser = async (name, newUserData) => {
+const changePass = async (data) => {
   try {
+    const {
+      password,
+      newPassword,
+      username,
+    } = data;
+
+    const user = await User.findOne({ username: username });
+
+    if (user) {
+      const passOK = bcrypt.compare(password, user.password);
+
+      if (passOK) {
+        const saltRounds = 10;
+        const hash = await bcrypt.hash(newPassword, saltRounds);
+        if (!hash) {
+          throw new Error('could not create hash');
+        }
+        else {
+          const result = await User.updateOne({ username }, { $set: { password: hash } });
+        
+          if (result.matchedCount === 1) {
+            return {
+              success: result.modifiedCount === 1,
+            };
+          }
+          else {
+            throw new Error(`no user with username ${ username }`);
+          }
+        }
+      }
+      else {
+        return {
+          success: true,
+          result: 'badPass',
+        };
+      }
+    }
+
+  }
+  catch (error) {
+    log.error(`[database]: change password error ${error.message}`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const editUser = async (data) => {
+  try {
+    const {
+      username,
+      newUserData,
+    } = data;
+
     const result = await User.updateOne(
-      { username: name },
+      { username: username },
       {
         $set:
           {
@@ -234,14 +315,13 @@ const editUser = async (name, newUserData) => {
           },
       },
     );
-    
     if (result.matchedCount === 1) {
       return {
         success: result.modifiedCount === 1,
       };
     }
     else {
-      throw new Error(`no user with username ${ name }`);
+      throw new Error(`no user with username ${ username }`);
     }
   }
   catch (error) {
@@ -253,16 +333,16 @@ const editUser = async (name, newUserData) => {
   }
 };
 
-const removeUser = async (name) => {
+const removeUser = async (username) => {
   try {
-    const result = await User.deleteOne({ username: name });
+    const result = await User.deleteOne({ username: username });
     if (result.deleteCount === 1) {
       return {
         success: true,
       };
     }
     else {
-      throw new Error(`no user with username ${ name }`);
+      throw new Error(`no user with username ${ username }`);
     }
   }
   catch (error) {
@@ -316,6 +396,27 @@ const getCommentsByUser = async (username) => {
   }
   catch (error) {
     log.error(`[database]: get comments by user error: ${ error.message }`);
+    return {
+      success: false,
+    };
+  }
+};
+
+const checkToken = async (data) => {
+  try {
+    const {
+      username,
+      token,
+    } = data;
+    const result = await User.findOne({ username: username, token: token });
+
+    return {
+      success: true && result,
+    };
+
+  }
+  catch (error) {
+    log.error(`[database]: check token error: ${ error.message }`);
     return {
       success: false,
     };
@@ -378,7 +479,7 @@ const getPost = async(postId) => {
 
 const getAllPosts = async () => {
   try {
-    const posts = await Post.find({});
+    const posts = await Post.find({}).toArray();
 
     return {
       success: true,
@@ -393,8 +494,12 @@ const getAllPosts = async () => {
   }
 };
 
-const editPost = async (postId, newPostData) => {
+const editPost = async (data) => {
   try {
+    const {
+      postId,
+      newPostData,
+    } = data;
     const result = await Post.updateOne(
       { _id: postId },
       {
@@ -477,10 +582,12 @@ module.exports = {
   getUser,
   addUser,
   authUser,
+  changePass,
   editUser,
   removeUser,
   getPostsByUser,
   getCommentsByUser,
+  checkToken,
 
   createPostCollection,
   addPost,
