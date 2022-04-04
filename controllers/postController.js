@@ -121,8 +121,6 @@ postController.get('/all', async (req, res) => {
   try {
     const result = await getAllPosts();
 
-    console.log(result);
-
     if (!result.success) {
       throw new Error(`error ${result.error.message}`);
     }

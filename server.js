@@ -46,13 +46,13 @@ const main = async () => {
   httpServer.listen(port, ip);
 
   // await createUserCollection();
-  await addUser({
-    name: 'Jane Doe',
-    username: 'user1',
-    password: 'pass1',
-    type: 'admin',
-    createdOn: new Date(Date.now()),
-  });
+  // await addUser({
+  //   name: 'Jane Doe',
+  //   username: 'user1',
+  //   password: 'pass1',
+  //   type: 'admin',
+  //   createdOn: new Date(Date.now()),
+  // });
   await getAllUsers();
   // await authUser('user', 'pass2');
   // await editUser(
