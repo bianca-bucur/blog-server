@@ -21,13 +21,17 @@ postController.post('/add', async (req, res) => {
     }
     else {
       const {
-        post,
+        title,
+        author,
+        category,
+        content,
       } = body;
-      if (!post) {
+      // if (!post) {
+      if (!title || !author || !category || !content) {
         throw new Error(`bad body ${JSON.stringify(body)}`);
       }
       else {
-        const result = await addPost(post);
+        const result = await addPost(body);
 
         if (!result.success) {
           throw new Error(`error ${result.error}`);

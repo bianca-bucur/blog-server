@@ -1,7 +1,7 @@
 const postSchema = {
   $jsonSchema: {
     bsonType: 'object',
-    required: ['title', 'author', 'category', 'content', 'createdOn'],
+    required: ['title', 'author', 'category', 'content'],
     properties: {
       title: {
         bsonType: 'string',
@@ -22,7 +22,7 @@ const postSchema = {
       },
       createdOn: {
         bsonType: 'date',
-        description: 'date and required',
+        description: 'date',
       },
       edited: {
         bsonType: 'bool',
