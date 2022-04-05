@@ -173,6 +173,9 @@ const getAllUsers = async () => {
         type: 1,
       },
     }).toArray();
+
+    console.log(users);
+
     return {
       success: true,
       users,
@@ -456,10 +459,23 @@ const createPostCollection = async () => {
 };
 const addPost = async (post) => {
   try {
+    post = {
+      ...post,
+      createdOn: new Date(Date.now()),
+      edited: false,
+    };
+    
+    console.log(post);
+
     const result = await Post.insertOne(post);
 
     if (result.insertedCount < 1) {
-      throw new Error();
+      throw new Error('could not insert new post');
+    }
+    else {
+      return {
+        success: true,
+      };
     }
   }
   catch (error) {
@@ -471,7 +487,7 @@ const addPost = async (post) => {
   }
 };
 
-const getPost = async(postId) => {
+const getPost = async (postId) => {
   try {
     const post = await Post.findOne({ _id: postId });
 

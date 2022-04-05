@@ -22,7 +22,7 @@ userController.get('/getAll', async (req, res) => {
     else {
       res.send({
         success: result.success,
-        data: result.data,
+        data: result.users,
       });
     }
   }

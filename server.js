@@ -5,14 +5,16 @@ const controllers = require('./controllers');
 const log = require('./utils/log');
 const config = require('./config');
 const http = require('http');
+const process = require('process');
+
 const {
   startWSServer,
 } = require('./modules/wsServer');
-const process = require('process');
+
 const {
   connectToDB,
   getAllUsers,
-  createCommentsCollection,
+  // createCommentsCollection,
   createPostCollection,
   // createUserCollection,
   // addUser,
@@ -27,15 +29,40 @@ const {
   },
 } = config;
 
+let httpServer;
+
 const main = async () => {
+  log.write('\n========================================= \n||  <---  DEBATABLE BLOG SERVER  --->  ||\n=========================================');
   const dbOk = await connectToDB();
+
+  process.on('exit', () => {
+    log.write('bye');
+  });
+
+  const handleSignal = (signal) => {
+    log.warn(`[main]: handleSignal received ${ signal } -> trying to gracefully shutdown...`);
+    httpServer.close((err) => {
+      log.warn('[main]: closing http server...');
+      process.exit(err ? 1 : 0);
+    });
+    // process.exit(0);
+  };
+
+  process.on('SIGINT', handleSignal);
+  process.on('SIGTERM', handleSignal);
+
+  process.on('unhandledRejection', (reason, promise) => {
+    log.error(`UNHANDLED REJECTION ${promise} -> ${reason}`);
+  });
+
+  process.on('uncaughtException', (exception, origin) => {
+    log.error(`UNCAUGHT EXCEPTION ${exception} -> ${origin}`);
+  });
+
   if (!dbOk) {
     log.error('[main]: cannot continue');
     process.exit(-1);
   }
-
-  startWSServer();
-
 
   const app = express();
   app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
@@ -44,11 +71,11 @@ const main = async () => {
 
   app.use(controllers);
 
-  const httpServer = http.createServer(app);
+  httpServer = http.createServer(app);
   httpServer.listen(port, ip);
 
   // await createUserCollection();
-  await createCommentsCollection();
+  // await createCommentsCollection();
   await createPostCollection();
   // await addUser({
   //   name: 'Jane Doe',
@@ -69,7 +96,8 @@ const main = async () => {
   //     // type: 'admin',
   //     // createdOn: new Date(Date.now()),
   //     },
-  //   });
+  
+ 
 };
 
 main();
