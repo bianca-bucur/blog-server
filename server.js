@@ -12,6 +12,8 @@ const process = require('process');
 const {
   connectToDB,
   getAllUsers,
+  createCommentsCollection,
+  createPostCollection,
   // createUserCollection,
   // addUser,
   // authUser,
@@ -46,6 +48,8 @@ const main = async () => {
   httpServer.listen(port, ip);
 
   // await createUserCollection();
+  await createCommentsCollection();
+  await createPostCollection();
   // await addUser({
   //   name: 'Jane Doe',
   //   username: 'user1',

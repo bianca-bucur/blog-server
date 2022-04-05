@@ -408,22 +408,52 @@ const checkToken = async (data) => {
 
 //#region Posts
 
-const createPostCollection = async () => {
-  try {
-    const collectionExists = await db.listCollections()
-      .toArray()
-      .includes('posts');
-    if (!collectionExists) {
-      await db.createCollection('posts', {
-        validator: postSchema,
-      });
-    }
-  }
-  catch (error) {
-    log.error(`[database]: could not create posts collection: ${ error.message }`);
-  }
+const newPostsColl = async () => {
+  await db.createCollection('posts', {
+    validator: postSchema,
+  });
 };
 
+const createPostCollection = async () => {
+  try {
+    const shouldCreate = new Promise((resolve, reject) => {
+      db.listCollections({ name: 'posts' })
+        .next((err, collInfo) => {
+          if (err) {
+            reject({
+              success: false,
+              err,
+            });
+          }
+          else if (!collInfo) {
+            resolve({
+              success: true,
+            });
+          }
+          else {
+            reject({
+              success: false,
+              err: 'collections exists',
+            });
+          }
+        });
+    });
+    shouldCreate.then((result) => {
+      if (result.success) {
+        setTimeout(newPostsColl.bind(db, shouldCreate));
+      }
+    })
+      .catch((result) => {
+        log.error(`[database]: could not create posts collection ${result.err}`);
+      });
+  }
+  catch (error) {
+    log.error(`[database]: could not create posts collection ${error.message}`);
+    return {
+      success: false,
+    };
+  }
+};
 const addPost = async (post) => {
   try {
     const result = await Post.insertOne(post);
@@ -533,23 +563,50 @@ const removePost = async (postId) => {
 
 //#region Comments
 
+const newCommentsColl = async () => {
+  await db.createCollection('comments', {
+    validator: commentSchema,
+  });
+};
+
 const createCommentsCollection = async () => {
   try {
-    const collectionExists = db.listCollections()
-      .toArray()
-      .includes('comments');
-    
-    if (!collectionExists) {
-      await db.createCollection('comments', {
-        validator: commentSchema,
+    const shouldCreate = new Promise((resolve, reject) => {
+      db.listCollections({ name: 'comments' })
+        .next((err, collInfo) => {
+          if (err) {
+            reject({
+              success: false,
+              err,
+            });
+          }
+          else if (!collInfo) {
+            resolve({
+              success: true,
+            });
+          }
+          else {
+            reject({
+              success: false,
+              err: 'collections exists',
+            });
+          }
+        });
+    });
+    shouldCreate.then((result) => {
+      if (result.success) {
+        setTimeout(newCommentsColl.bind(db, shouldCreate));
+      }
+    })
+      .catch((result) => {
+        log.error(`[database]: could not create posts collection ${result.err}`);
       });
-    }
-    else {
-      throw new Error('collection already exists');
-    }
   }
   catch (error) {
-    log.error(`[database]: could not create comments collection: ${ error.message }`);
+    log.error(`[database]: could not create posts collection ${error.message}`);
+    return {
+      success: false,
+    };
   }
 };
 
