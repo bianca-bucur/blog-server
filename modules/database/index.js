@@ -87,25 +87,6 @@ const createUserCollection = () => {
   }
 };
 
-const getAllUsers = async () => {
-  try {
-    const collectionExists = await db.listCollections()
-      .toArray()
-      .includes('users');
-    if (!collectionExists) {
-      await db.createCollection('users', {
-        validator: userSchema,
-      });
-    }
-    else {
-      throw new Error('collection already exists');
-    }
-  }
-  catch (error) {
-    log.error(`[database]: could not create user collection: ${error.message}`);
-  }
-};
-
 const addUser = async (newUser) => {
   try {
     const {

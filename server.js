@@ -13,9 +13,9 @@ const {
   connectToDB,
   getAllUsers,
   // createUserCollection,
-  addUser,
+  // addUser,
   // authUser,
-  editUser,
+  // editUser,
 } = require('./modules/database');
 
 const {
