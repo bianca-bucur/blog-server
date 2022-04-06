@@ -1,4 +1,4 @@
-const {MongoClient} = require('mongodb');
+const {MongoClient, ObjectId}= require('mongodb');
 const bcrypt = require('bcrypt');
 const { customAlphabet } = require('nanoid');
 
@@ -345,7 +345,7 @@ const getPostsByUser = async (username) => {
     const posts = [];
 
     await asyncForEach(postIds, async (postId) => {
-      const post = await Post.findOne({ _id: postId });
+      const post = await Post.findOne({ _id: new ObjectId(postId) });
       posts.push(post);
     });
 
@@ -369,7 +369,7 @@ const getCommentsByUser = async (username) => {
     const comments = [];
 
     await asyncForEach(commentIds, async (commentId) => {
-      const comment = Comment.findOne({ _id: commentId });
+      const comment = Comment.findOne({ _id: new ObjectId(commentId) });
       comments.push(comment);
     });
 
@@ -489,7 +489,7 @@ const addPost = async (post) => {
 
 const getPost = async (postId) => {
   try {
-    const post = await Post.findOne({ _id: postId });
+    const post = await Post.findOne({ _id: new ObjectId(postId) });
 
     return {
       success: true,
@@ -525,13 +525,15 @@ const editPost = async (data) => {
   try {
     const {
       postId,
-      newPostData,
+      editedPost,
     } = data;
+    
     const result = await Post.updateOne(
-      { _id: postId },
+      { _id: new ObjectId(postId) },
       {
         $set: {
-          ...newPostData,
+          ...editedPost,
+          edited: true,
         },
       },
     );
@@ -556,8 +558,9 @@ const editPost = async (data) => {
 
 const removePost = async (postId) => {
   try {
-    const result = await Post.deleteOne({ _id: postId });
-    if (result.deleteCount === 1) {
+    const result = await Post.deleteOne({ _id: new ObjectId(postId) });
+    
+    if (result.deletedCount === 1) {
       return {
         success: true,
       };

@@ -4,11 +4,48 @@ const log = require('../utils/log');
 const {
   addPost,
   editPost,
-  deletePost,
   getAllPosts,
+  removePost,
+  getPost,
 } = require('../modules/database');
 
 const postController = express.Router();
+
+postController.post('/get', async (req, res) => {
+  try {
+    const {
+      body,
+    } = req;
+    if (!body) {
+      throw new Error('empty body');
+    }
+    else {
+      const {
+        postId,
+      } = body;
+      if (!postId) {
+        throw new Error(`bad body: ${ JSON.stringify(body) }`);
+      }
+      else {
+        const result = await getPost(postId);
+
+        if (!result.success) {
+          throw new Error(`error: ${ result.error }`);
+        }
+        else {
+          res.send({
+            success: true,
+            data: result.post,
+          });
+        }
+      }
+    }
+  }
+  catch (error) {
+    log.error(`[post]: POST /get -> ${ error.message }`);
+    res.send({success: false});
+  }
+});
 
 postController.post('/add', async (req, res) => {
   try {
@@ -43,12 +80,12 @@ postController.post('/add', async (req, res) => {
     }
   }
   catch (error) {
-    log.error(`[post]: POST /addPost -> ${error.message}`);
+    log.error(`[post]: POST /add -> ${error.message}`);
     res.send({ success: false });
   }
 });
 
-postController.post('/editPost', async (req, res) => {
+postController.post('/edit', async (req, res) => {
   let result = {};
 
   try {
@@ -61,15 +98,15 @@ postController.post('/editPost', async (req, res) => {
     }
     else {
       const {
-        title,
-        post,
+        postId,
+        editedPost,
       } = body;
 
-      if (!title || !post) {
+      if (!postId || !editedPost) {
         throw new Error(`bad body: ${JSON.stringify(body)}`);
       }
       else {
-        result = await editPost(title, post);
+        result = await editPost({postId, editedPost});
 
         if (!result.success) {
           throw new Error(`error: ${result.error.message}`);
@@ -81,12 +118,12 @@ postController.post('/editPost', async (req, res) => {
     }
   }
   catch (error) {
-    log.error(`[post]: POST /editPost -> ${error.message}`);
+    log.error(`[post]: POST /edit -> ${error.message}`);
     res.send({ success: false });
   }
 });
 
-postController.delete('/deletePost', async (req, res) => {
+postController.delete('/delete', async (req, res) => {
   try {
     const {
       body,
@@ -97,14 +134,14 @@ postController.delete('/deletePost', async (req, res) => {
     }
     else {
       const {
-        title,
+        postId,
       } = body;
 
-      if (!title) {
+      if (!postId) {
         throw new Error(`bad body ${JSON.stringify(body)}`);
       }
       else {
-        const result = await deletePost(title);
+        const result = await removePost(postId);
 
         if (!result.success) {
           throw new Error(`${result.error.message}`);
@@ -116,12 +153,12 @@ postController.delete('/deletePost', async (req, res) => {
     }
   }
   catch (error) {
-    log.error(`[post]: DELETE /deletePost -> ${error.message}`);
+    log.error(`[post]: DELETE /delete -> ${error.message}`);
     res.send({ success: false });
   }
 });
 
-postController.get('/all', async (req, res) => {
+postController.get('/getAll', async (req, res) => {
   try {
     const result = await getAllPosts();
 
@@ -131,12 +168,12 @@ postController.get('/all', async (req, res) => {
     else {
       res.send({
         success: result.success,
-        data: result.data ? result.data : {},
+        data: result.posts ? result.posts : {},
       });
     }
   }
   catch (error) {
-    log.error(`[post]: GET /all -> ${error.message}`);
+    log.error(`[post]: GET /getAll -> ${error.message}`);
     res.send({ success: false });
   }
 });

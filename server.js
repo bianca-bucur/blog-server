@@ -76,7 +76,7 @@ const main = async () => {
 
   // await createUserCollection();
   // await createCommentsCollection();
-  await createPostCollection();
+  // await createPostCollection();
   // await addUser({
   //   name: 'Jane Doe',
   //   username: 'user1',
@@ -84,7 +84,7 @@ const main = async () => {
   //   type: 'admin',
   //   createdOn: new Date(Date.now()),
   // });
-  await getAllUsers();
+  // await getAllUsers();
   // await authUser('user', 'pass2');
   // await editUser(
   //   {
