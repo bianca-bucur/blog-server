@@ -629,6 +629,32 @@ const createCommentsCollection = async () => {
   }
 };
 
+const addComment = async (data) => {
+  try {
+    data = {
+      ...data,
+      createdOn: new Date(Date.now()),
+      edited: false,
+    };
+    const result = await Comment.insertOne(data);
+
+    if (result.insertedCount < 1) {
+      throw new Error('could not insert new comment');
+    }
+    else {
+      return {
+        success: true,
+      };
+    }
+  }
+  catch (error) {
+    log.error(`[database]: could not add comment ${ error.message }`);
+    return {
+      success: false,
+    };
+  }
+};
+
 //#endregion
 
 module.exports = {
@@ -654,4 +680,5 @@ module.exports = {
   removePost,
 
   createCommentsCollection,
+  addComment,
 };
