@@ -32,6 +32,7 @@ const {
 let httpServer;
 
 const main = async () => {
+  console.log('testing');
   const dbOk = await connectToDB();
 
   process.on('exit', () => {
