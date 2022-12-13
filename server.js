@@ -26,6 +26,7 @@ const {
 } = config;
 
 const main = async () => {
+  console.log('test');
   const dbOk = await connectToDB();
   if (!dbOk) {
     log.error('[main]: cannot continue');
